@@ -1,0 +1,41 @@
+.title-box {
+  .sm-title {
+    color: $text-color-900;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+  }
+  .title {
+    color: $text-color-900;
+    span {
+      color: $secondary-color-900;
+    }
+  }
+}
+
+.title-box-2 {
+  @extend .title-box;
+  .sm-title {
+    color: $tertiary-color-900;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 106px;
+      height: 13px;
+      background-image: url("data:image/svg+xml,%3Csvg width='106' height='13' viewBox='0 0 106 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M105.773 6.5L100 0.726497L94.2265 6.5L100 12.2735L105.773 6.5ZM0 6.5V7.5H100V6.5V5.5H0V6.5Z' fill='%23FC791A'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      vertical-align: middle;
+      margin-right: 18px;
+      @include screen-992 {
+        width: 56px;
+      }
+    }
+  }
+  .title {
+    span {
+      color: $tertiary-color-900;
+    }
+  }
+}

@@ -1,0 +1,7336 @@
+:root {
+  --ida-header-text: #7e97c0;
+  --ida-header-active: #1196a3;
+  --ida-header-border: #9dc0d8;
+  --ida-hero: #78a9d6;
+  --ida-hero-dark: #6a9aca;
+  --ida-hero-text: #ffffff;
+  --ida-heading-blue: #7aa4cf;
+  --ida-orange: #ff5b2e;
+  --ida-card: #585b5d;
+  --ida-card-shadow: rgba(0, 0, 0, 0.12);
+  --ida-copy: #6f6f73;
+}
+
+body.ida-homepage-active {
+  background: #fff;
+  overflow-x: hidden;
+}
+
+body.ida-homepage-active .ida-home-hidden-original {
+  display: none !important;
+}
+
+body.ida-homepage-active .ch-header-area {
+  position: relative;
+  z-index: 50;
+  margin-bottom: 0;
+  border-bottom: 2px solid rgba(15, 24, 38, 0.8);
+  background: #fff;
+}
+
+body.ida-homepage-active .ch-header-area .header-topbar {
+  display: none !important;
+}
+
+body.ida-homepage-active .ch-header-area .header-main-shell {
+  max-width: none;
+  width: 100%;
+  padding: 10px 22px 10px 28px;
+}
+
+body.ida-homepage-active .ch-header-area > .container.relative {
+  max-width: none;
+  width: 100%;
+  padding: 10px 22px 10px 28px;
+}
+
+body.ida-homepage-active .ch-header-area .header-main-row {
+  align-items: center;
+  min-height: 66px;
+}
+
+body.ida-homepage-active .ch-header-area > .container.relative > .row {
+  align-items: center;
+  min-height: 66px;
+}
+
+body.ida-homepage-active .ch-header-area .header-brand-column {
+  display: flex;
+  align-items: center;
+}
+
+body.ida-homepage-active .ch-header-area .ch-header-logo-wrapper {
+  width: auto;
+  max-width: 154px;
+  height: 50px;
+}
+
+body.ida-homepage-active .ch-header-area .logo,
+body.ida-homepage-active .ch-header-area .ch-header-logo-wrapper img {
+  width: auto;
+  max-width: 100%;
+  height: 50px;
+  object-fit: contain;
+}
+
+body.ida-homepage-active .ch-header-area .header-nav-column {
+  display: flex;
+  justify-content: center;
+}
+
+body.ida-homepage-active .ch-header-area > .container.relative > .row > .d-none.d-lg-block {
+  display: flex !important;
+  justify-content: center;
+}
+
+body.ida-homepage-active .ch-header-area nav {
+  width: 100%;
+}
+
+body.ida-homepage-active .ch-header-area .ch-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+}
+
+body.ida-homepage-active .ch-header-area .ch-menu > li {
+  position: relative;
+}
+
+body.ida-homepage-active .ch-header-area .ch-menu > li > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ida-header-text);
+}
+
+body.ida-homepage-active .ch-header-area .ch-menu > li.is-current > a,
+body.ida-homepage-active .ch-header-area .ch-menu > li.is-current-ancestor > a,
+body.ida-homepage-active .ch-header-area .ch-menu > li.current-menu-item > a,
+body.ida-homepage-active .ch-header-area .ch-menu > li.current_page_item > a,
+body.ida-homepage-active .ch-header-area .ch-menu > li.active > a,
+body.ida-homepage-active .ch-header-area .ch-menu > li:hover > a {
+  color: var(--ida-header-active);
+}
+
+body.ida-homepage-active .ch-header-area .header-action-group,
+body.ida-homepage-active .ch-header-area .header-mobile-action-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+body.ida-homepage-active .ch-header-area .header-actions-column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+body.ida-homepage-active .ch-header-area > .container.relative > .row > [class*="justify-content-end"] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+body.ida-homepage-active .ch-header-area .ida-home-action-group {
+  flex: 0 0 auto;
+  min-height: 0;
+}
+
+body.ida-homepage-active .ch-header-area .header-mobile-action-group {
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 18px;
+}
+
+body.ida-homepage-active .ch-header-area .header-action-group > a,
+body.ida-homepage-active .ch-header-area .header-mobile-action-group > a {
+  flex: 0 0 auto;
+  align-self: center;
+  margin: 0;
+}
+
+body.ida-homepage-active .ch-header-area .ida-home-signin,
+body.ida-homepage-active .ch-header-area .ida-home-apply {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 42px;
+  min-height: 42px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.ida-homepage-active .ch-header-area .ida-home-signin {
+  order: 1;
+  min-width: 104px;
+  color: #fff;
+  border: 1px solid transparent;
+  background: #0a919c;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+}
+
+body.ida-homepage-active .ch-header-area .ida-home-apply {
+  order: 2;
+  min-width: 194px;
+  color: var(--ida-header-text);
+  border: 1px solid var(--ida-header-border);
+  background: #fff;
+}
+
+body.ida-homepage-active .ch-header-area .ida-home-signin:hover,
+body.ida-homepage-active .ch-header-area .ida-home-apply:hover {
+  transform: translateY(-1px);
+}
+
+body.ida-homepage-active .mobile-menu .header-mobile-action-group > a {
+  width: 100%;
+  align-self: stretch;
+}
+
+body.ida-homepage-active .ch-header-area .mobile-menu-toggle svg path,
+body.ida-homepage-active .mobile-menu .close svg path {
+  fill: #0a919c;
+}
+
+body.ida-homepage-active .mobile-menu .mobile-nav-menu {
+  display: grid;
+  gap: 14px;
+}
+
+body.ida-homepage-active .mobile-menu .mobile-nav-menu a {
+  font-size: 18px;
+  font-weight: 600;
+  color: #6885b3;
+}
+
+[data-ida-homepage-sections] {
+  position: relative;
+  z-index: 0;
+}
+
+.ida-network-hero {
+  --ida-network-circle-size: 520px;
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 10px;
+  background: linear-gradient(180deg, var(--ida-hero) 0%, var(--ida-hero-dark) 100%);
+}
+
+.ida-network-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700' viewBox='0 0 1200 700'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.18)' stroke-width='2'%3E%3Cpath d='M55 153L232 89l176 89 148-60 169 87 204-94 187 98'/%3E%3Cpath d='M18 531l196-89 170 52 177-97 181 66 177-79 235 119'/%3E%3Cpath d='M160 40l123 152 177-14 169 95 194-42 171 154'/%3E%3Cpath d='M136 626l118-167 191-49 169 82 227-53 205 126'/%3E%3C/g%3E%3Cg fill='rgba(255,255,255,0.14)'%3E%3Ccircle cx='232' cy='89' r='7'/%3E%3Ccircle cx='408' cy='178' r='6'/%3E%3Ccircle cx='725' cy='205' r='7'/%3E%3Ccircle cx='1033' cy='618' r='8'/%3E%3Ccircle cx='214' cy='442' r='7'/%3E%3Ccircle cx='629' cy='492' r='7'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+.ida-network-hero::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -178px;
+  width: 154%;
+  height: 232px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+.ida-network-layout,
+.ida-impact-shell,
+.ida-offers-shell,
+.ida-goal-shell,
+.ida-audience-shell {
+  width: min(100%, 1660px);
+  margin: 0 auto;
+  padding-left: 34px;
+  padding-right: 34px;
+}
+
+.ida-network-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.32fr) minmax(340px, 0.68fr);
+  align-items: center;
+  gap: 0;
+  min-height: 520px;
+  padding-bottom: 50px;
+}
+
+.ida-network-content {
+  max-width: 920px;
+  padding-left: 28px;
+  padding-top: 56px;
+  position: relative;
+  z-index: 2;
+}
+
+.ida-network-title,
+.ida-impact-title,
+.ida-offers-title,
+.ida-audience-title {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.ida-network-title {
+  margin: 0 0 30px;
+  color: var(--ida-hero-text);
+  font-size: clamp(2.4rem, 3.5vw, 4rem);
+  font-weight: 700;
+  line-height: 0.98;
+}
+
+.ida-network-title span {
+  color: #ff9475;
+}
+
+.ida-network-hero > .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ida-network-points {
+  display: block;
+  max-width: 720px;
+}
+
+.ida-network-copy {
+  min-height: 144px;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: clamp(1.12rem, 1.34vw, 1.45rem);
+  font-weight: 400;
+  line-height: 1.48;
+  transition: opacity 0.3s ease;
+}
+
+.ida-network-copy-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.ida-network-visual {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.ida-network-circle {
+  width: min(100%, var(--ida-network-circle-size));
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 28px 80px rgba(24, 51, 93, 0.22);
+}
+
+.ida-network-circle video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+.ida-impact-section {
+  position: relative;
+  padding: 0 0 112px;
+  background: #fff;
+}
+
+.ida-impact-grid {
+  display: grid;
+  grid-template-columns: minmax(400px, 0.82fr) minmax(0, 1.18fr);
+  align-items: center;
+  gap: 34px;
+}
+
+.ida-impact-media {
+  position: relative;
+  width: min(100%, 428px);
+  min-height: 360px;
+}
+
+.ida-impact-outline {
+  position: absolute;
+  left: 16px;
+  top: 84px;
+  width: 184px;
+  height: 242px;
+  border: 3px solid var(--ida-orange);
+  border-radius: 18px;
+  z-index: 0;
+}
+
+.ida-impact-media-card {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 18px 34px rgba(39, 55, 81, 0.08);
+}
+
+.ida-impact-media-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ida-impact-media-card--wide {
+  left: 38px;
+  top: 120px;
+  width: 180px;
+  height: 234px;
+  z-index: 1;
+}
+
+.ida-impact-media-card--wide img {
+  object-position: 50% 50%;
+}
+
+.ida-impact-media-card--tall {
+  left: 238px;
+  top: 0;
+  width: 172px;
+  height: 238px;
+  z-index: 2;
+}
+
+.ida-impact-media-card--tall img {
+  object-position: 56% 50%;
+}
+
+.ida-impact-stats-shell {
+  position: absolute;
+  left: 184px;
+  top: 248px;
+  padding: 6px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 20px 38px rgba(39, 55, 81, 0.08);
+  z-index: 3;
+}
+
+.ida-impact-stats-card {
+  display: grid;
+  gap: 10px;
+  min-width: 240px;
+  padding: 14px 18px 13px;
+  border-radius: 16px;
+  background: #76a6d2;
+  color: #fff;
+}
+
+.ida-impact-stat-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.ida-impact-stat-number {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.ida-impact-stat-prefix {
+  transform: translateY(-2px);
+}
+
+.ida-impact-stat-text {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.ida-impact-copy {
+  max-width: 920px;
+}
+
+.ida-impact-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 18px;
+}
+
+.ida-impact-kicker-line {
+  position: relative;
+  width: 92px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--ida-orange);
+}
+
+.ida-impact-kicker-diamond {
+  width: 11px;
+  height: 11px;
+  margin-left: -2px;
+  background: var(--ida-orange);
+  transform: rotate(45deg);
+}
+
+.ida-impact-kicker-text {
+  margin-left: 16px;
+  color: var(--ida-orange);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.ida-impact-title {
+  margin: 0 0 10px;
+  color: var(--ida-heading-blue);
+  font-size: clamp(2.1rem, 2.1vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.16;
+}
+
+.ida-impact-copy p,
+.ida-audience-copy {
+  margin: 0 0 10px;
+  color: var(--ida-copy);
+  font-size: 1.2rem;
+  line-height: 1.42;
+}
+
+.ida-offers-section {
+  padding: 84px 0 118px;
+  background: #f2f2f2;
+}
+
+.ida-offers-shell {
+  display: grid;
+  gap: 8px;
+}
+
+.ida-offers-title {
+  margin: 0 0 10px;
+  color: var(--ida-heading-blue);
+  font-size: clamp(2.1rem, 2.1vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.ida-offers-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.ida-offers-accent-primary,
+.ida-offers-accent-secondary {
+  display: block;
+  height: 18px;
+  border-radius: 999px;
+}
+
+.ida-offers-accent-primary {
+  width: 344px;
+  background: var(--ida-orange);
+}
+
+.ida-offers-accent-secondary {
+  width: 72px;
+  background: #73a5d3;
+}
+
+.ida-offers-top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.ida-offers-heading {
+  margin-top: 60px;
+}
+
+.ida-offers-bottom-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.ida-offers-card {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  padding: 28px 30px 30px;
+  color: #fff;
+  border-radius: 0 96px 0 64px;
+  background: #5b5c60;
+  box-shadow: 10px 11px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Structured Membership card beside the title */
+.ida-offers-card--structured {
+  min-height: 252px;
+}
+
+/* Bottom row cards with staggered vertical offsets matching the design */
+.ida-offers-card--digital {
+  min-height: 258px;
+  margin-top: -40px;
+}
+
+.ida-offers-card--collaborative {
+  min-height: 248px;
+  margin-top: 38px;
+}
+
+.ida-offers-card--global {
+  min-height: 250px;
+  margin-top: 18px;
+}
+
+.ida-offers-card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.ida-offers-card-icon {
+  flex: 0 0 62px;
+  width: 62px;
+  height: 62px;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.ida-offers-card-icon svg,
+.ida-offers-lottie,
+.ida-offers-lottie > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ida-offers-card-title {
+  margin: 0;
+  color: #f7f5ef;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+.ida-offers-card-body p {
+  margin: 0;
+  color: rgba(245, 241, 234, 0.9);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.ida-goal-section {
+  padding: 8px 0 34px;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+
+.ida-goal-section .ida-goal-shell {
+  width: 100%;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ida-goal-frame {
+  position: relative;
+  display: grid;
+  align-content: center;
+  gap: 4px;
+  min-height: 430px;
+  padding: 50px 28px 40px;
+}
+
+.ida-goal-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/sec-5-brush-frame.png") center / 100% 100% no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ida-goal-title,
+.ida-goal-grid,
+.ida-goal-copy p,
+.ida-goal-visual {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+.ida-goal-title,
+.ida-goal-copy p {
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+.ida-goal-title {
+  width: min(100%, 1520px);
+  max-width: 1414px;
+  margin-bottom: 10px;
+  font-size: clamp(2.1rem, 2.1vw, 2.1rem);
+  line-height: 1.06;
+}
+
+.ida-goal-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.38fr) minmax(360px, 0.82fr);
+  align-items: center;
+  width: min(100%, 1520px);
+  margin: 0 auto;
+  padding: 0 22px;
+  gap: 18px;
+}
+
+.ida-goal-copy {
+  min-height: 100%;
+  padding: 0 0 2px 12px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ida-goal-copy p {
+  max-width: 842px;
+  font-size: clamp(1.3rem, 1.3vw, 1.3rem);
+  line-height: 1.56;
+}
+
+.ida-goal-visual {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 28px;
+  padding-bottom: 18px;
+}
+
+.ida-goal-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ida-cta-section {
+  padding: 22px 0 46px;
+  background: #f2f2f2;
+}
+
+.ida-cta-shell {
+  width: min(100%, 1660px);
+  margin: 0 auto;
+  padding: 0 34px;
+  text-align: center;
+}
+
+.ida-cta-title {
+  margin: 0;
+  color: #ff5528;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 2.4vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.ida-cta-copy {
+  max-width: 1410px;
+  margin: 20px auto 0;
+  color: #555555;
+  font-size: clamp(1.06rem, 1.45vw, 2.08rem);
+  line-height: 1.42;
+  text-wrap: balance;
+}
+
+.ida-cta-copy-accent {
+  color: #138595;
+}
+
+.ida-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.ida-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 286px;
+  min-height: 60px;
+  padding: 0 34px;
+  border-radius: 999px;
+  border: 2px solid #138595;
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.ida-cta-button:hover {
+  transform: translateY(-1px);
+}
+
+.ida-cta-button--primary {
+  color: #ffffff;
+  font-weight: 700;
+  border-color: #0a919c;
+  background: #0a919c;
+  box-shadow: 0 12px 24px rgba(108, 157, 200, 0.18);
+}
+
+.ida-cta-button--secondary {
+  border-color: #0a919c;
+  background: #0a919c;
+  font-weight: 500;
+  color: #fff;
+}
+
+.ida-cta-actions .ida-route-hover-control[data-ida-hover-mode="filled"] {
+  --ida-route-hover-border: #ff5528 !important;
+  --ida-route-hover-text: #ff5528 !important;
+}
+
+.ida-cta-actions .ida-route-hover-control[data-ida-hover-mode="outlined"] {
+  --ida-route-hover-background: #ff5528 !important;
+  --ida-route-hover-text: #ffffff !important;
+}
+
+.ida-footer-section {
+  padding: 28px 0 16px;
+  /* background: #393939; */
+  /* background: #5a5a5a; */
+  background: #6b6b6b;
+}
+
+.ida-footer-shell {
+  width: min(100%, 1660px);
+  margin: 0 auto;
+  padding: 0 34px;
+}
+
+.ida-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.95fr) repeat(3, minmax(180px, 1fr));
+  gap: 42px;
+  align-items: start;
+}
+
+.ida-footer-brand-card {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  min-height: 180px;
+  padding: 26px 28px 24px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.ida-footer-brand-logo {
+  width: min(100%, 182px);
+  max-height: 88px;
+  object-fit: contain;
+}
+
+.ida-footer-brand-copy p {
+  margin: 0;
+}
+
+.ida-footer-brand-title {
+  color: #fff;
+  font-size: clamp(1.4rem, 1.4vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.ida-footer-brand-text {
+  margin-top: 14px !important;
+  color: #555555;
+  font-size: clamp(1.28rem, 1.3vw, 1.56rem);
+  line-height: 1.38;
+}
+
+.ida-footer-nav-title {
+  margin: 10px 0 30px;
+  color: #fff;
+  font-size: clamp(1.5rem, 1.5vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.ida-footer-nav-title::after {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 4px;
+  margin-top: 14px;
+  border-radius: 999px;
+  background: #ff5a2a;
+}
+
+.ida-footer-nav-list {
+  display: grid;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ida-footer-link {
+  color: #d7d7d7;
+  font-size: clamp(1.08rem, 1.16vw, 1.33rem);
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.ida-footer-link:hover {
+  color: #ffffff;
+}
+
+.ida-footer-meta {
+  margin-top: 22px;
+}
+
+.ida-footer-divider {
+  width: min(100%, 1380px);
+  height: 4px;
+  margin: 0 auto;
+  background: #c0c0c0;
+}
+
+.ida-footer-copyright {
+  margin: 12px auto 0;
+  color: #d0d0d0;
+  font-size: clamp(1.02rem, 1.12vw, 1.33rem);
+  line-height: 1.3;
+  text-align: center;
+}
+
+.ida-audience-section {
+  --ida-audience-bg: #f1f1f1;
+  --ida-audience-band-color: #0a1630;
+  --ida-audience-band-extra: clamp(148px, 11.2vw, 228px);
+  --ida-audience-band-width: max(
+    calc(100% + (var(--ida-audience-band-extra) * 2)),
+    calc(100vw + (var(--ida-audience-band-extra) * 2))
+  );
+  --ida-audience-band-height: clamp(164px, 15.2vw, 214px);
+  --ida-audience-band-top: clamp(18px, 1.9vw, 30px);
+  --ida-audience-band-pad-top: clamp(28px, 2.8vw, 42px);
+  --ida-audience-band-pad-bottom: clamp(96px, 8.4vw, 128px);
+  --ida-audience-left-gap: clamp(246px, 24.2vw, 468px);
+  --ida-audience-edge-gap: clamp(438px, 43.8vw, 612px);
+  --ida-audience-exit-gap: clamp(438px, 43.8vw, 612px);
+  --ida-audience-hidden-gap: clamp(620px, 60.8vw, 824px);
+  --ida-audience-stage-height: 342px;
+  --ida-audience-stage-bottom-pad: 14px;
+  --ida-audience-hidden-card-width: clamp(132px, 11vw, 174px);
+  --ida-audience-hidden-card-height: clamp(132px, 11vw, 174px);
+  --ida-audience-hidden-title-width: 186px;
+  --ida-audience-exit-card-width: clamp(178px, 14.6vw, 218px);
+  --ida-audience-exit-card-height: clamp(178px, 14.6vw, 218px);
+  --ida-audience-exit-title-width: 214px;
+  --ida-audience-edge-card-width: clamp(178px, 14.6vw, 218px);
+  --ida-audience-edge-card-height: clamp(178px, 14.6vw, 218px);
+  --ida-audience-edge-title-width: 214px;
+  --ida-audience-side-card-width: clamp(214px, 17.8vw, 264px);
+  --ida-audience-side-card-height: clamp(214px, 17.8vw, 264px);
+  --ida-audience-side-title-width: 286px;
+  --ida-audience-active-card-width: clamp(232px, 18.6vw, 284px);
+  --ida-audience-active-card-height: clamp(232px, 18.6vw, 284px);
+  --ida-audience-active-title-width: 344px;
+  padding: 36px 0 50px;
+  background: var(--ida-audience-bg);
+  overflow: hidden;
+}
+
+.ida-audience-shell {
+  display: grid;
+  gap: 8px;
+}
+
+.ida-audience-copy-block {
+  max-width: 95%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ida-audience-title {
+  margin: 0 0 10px;
+  color: var(--ida-heading-blue);
+  font-size: clamp(2.1rem, 2.1vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.04;
+}
+
+.ida-audience-copy {
+  max-width: 100%;
+  margin: 0 auto;
+  color: #585d66;
+  font-size: clamp(1.2rem, 1.72vw, 2.08rem);
+  line-height: 1.3;
+}
+
+.ida-audience-copy-accent {
+  display: inline-block;
+  white-space: nowrap;
+  color: var(--ida-orange);
+}
+
+.ida-audience-stage {
+  position: relative;
+  overflow: visible;
+  min-height: var(--ida-audience-stage-height);
+  padding: 0 0 var(--ida-audience-stage-bottom-pad);
+  isolation: isolate;
+  margin-top: 50px;
+}
+
+.ida-audience-strip {
+  position: absolute;
+  left: 50%;
+  top: calc(var(--ida-audience-band-top) - var(--ida-audience-band-pad-top) - 30px);
+  width: var(--ida-audience-band-width);
+  height: calc(
+    var(--ida-audience-band-height) +
+    var(--ida-audience-band-pad-top) +
+    var(--ida-audience-band-pad-bottom)
+    + 40px
+  );
+  transform: translateX(-50%);
+  overflow: hidden;
+  background: var(--ida-audience-band-color);
+  border-radius: 999px / 50%;
+  clip-path: ellipse(50% 50% at 50% 50%);
+  box-shadow: 0 18px 36px rgba(7, 12, 24, 0.16);
+  z-index: 1;
+}
+
+.ida-audience-strip::before,
+.ida-audience-strip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ida-audience-strip::before {
+  inset: 0 0 auto;
+  height: 54%;
+  background: rgba(255, 255, 255, 0.035);
+  border-radius: inherit;
+  clip-path: inherit;
+  opacity: 1;
+}
+
+.ida-audience-strip::after {
+  inset: auto 4% -16%;
+  height: 46%;
+  background: rgba(3, 8, 20, 0.18);
+  border-radius: inherit;
+  clip-path: inherit;
+  filter: blur(14px);
+  opacity: 1;
+}
+
+.ida-audience-stage::selection,
+.ida-audience-stage *::selection {
+  background: transparent;
+}
+
+.ida-audience-track {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: 100%;
+  min-height: var(--ida-audience-stage-height);
+  padding: 0;
+  perspective: none;
+}
+
+.ida-audience-track.is-animating .ida-audience-card {
+  pointer-events: none;
+}
+
+.ida-audience-card {
+  position: absolute;
+  top: var(--ida-audience-band-top);
+  left: 50%;
+  display: grid;
+  justify-items: center;
+  gap: 9px;
+  width: var(--ida-panel-width, 240px);
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: center center;
+  transition:
+    transform 840ms cubic-bezier(0.22, 0.7, 0.2, 1),
+    opacity 560ms ease,
+    width 840ms cubic-bezier(0.22, 0.7, 0.2, 1),
+    z-index 10ms linear;
+}
+
+.ida-audience-card.is-no-transition {
+  transition: none !important;
+}
+
+.ida-audience-card.is-left,
+.ida-audience-card.is-active,
+.ida-audience-card.is-right,
+.ida-audience-card.is-edge-left,
+ .ida-audience-card.is-edge-right,
+ .ida-audience-card.is-exit-left,
+ .ida-audience-card.is-enter-right {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ida-audience-card.is-hidden-left {
+  --ida-panel-width: var(--ida-audience-hidden-card-width);
+  --ida-panel-image-height: var(--ida-audience-hidden-card-height);
+  --ida-panel-title-width: var(--ida-audience-hidden-title-width);
+  transform: translate3d(calc(-50% - var(--ida-audience-hidden-gap)), 20px, 0) rotate(-8deg) scale(0.8);
+  z-index: 0;
+}
+
+.ida-audience-card.is-exit-left {
+  --ida-panel-width: var(--ida-audience-exit-card-width);
+  --ida-panel-image-height: var(--ida-audience-exit-card-height);
+  --ida-panel-title-width: var(--ida-audience-exit-title-width);
+  transform: translate3d(calc(-50% - var(--ida-audience-exit-gap)), 4px, 0) rotate(-7deg) scale(0.94);
+  z-index: 2;
+}
+
+.ida-audience-card.is-left {
+  --ida-panel-width: var(--ida-audience-side-card-width);
+  --ida-panel-image-height: var(--ida-audience-side-card-height);
+  --ida-panel-title-width: var(--ida-audience-side-title-width);
+  transform: translate3d(calc(-50% - var(--ida-audience-left-gap)), -10px, 0) rotate(-6deg) scale(0.98);
+  z-index: 3;
+}
+
+.ida-audience-card.is-active {
+  --ida-panel-width: var(--ida-audience-active-card-width);
+  --ida-panel-image-height: var(--ida-audience-active-card-height);
+  --ida-panel-title-width: var(--ida-audience-active-title-width);
+  transform: translate3d(-50%, -22px, 0) rotate(0deg) scale(1);
+  z-index: 5;
+}
+
+.ida-audience-card.is-right {
+  --ida-panel-width: var(--ida-audience-side-card-width);
+  --ida-panel-image-height: var(--ida-audience-side-card-height);
+  --ida-panel-title-width: var(--ida-audience-side-title-width);
+  transform: translate3d(calc(-50% + var(--ida-audience-left-gap)), -10px, 0) rotate(6deg) scale(0.98);
+  z-index: 3;
+}
+
+.ida-audience-card.is-enter-right {
+  --ida-panel-width: var(--ida-audience-exit-card-width);
+  --ida-panel-image-height: var(--ida-audience-exit-card-height);
+  --ida-panel-title-width: var(--ida-audience-exit-title-width);
+  transform: translate3d(calc(-50% + var(--ida-audience-exit-gap)), 4px, 0) rotate(7deg) scale(0.94);
+  z-index: 2;
+}
+
+.ida-audience-card.is-hidden-right {
+  --ida-panel-width: var(--ida-audience-hidden-card-width);
+  --ida-panel-image-height: var(--ida-audience-hidden-card-height);
+  --ida-panel-title-width: var(--ida-audience-hidden-title-width);
+  transform: translate3d(calc(-50% + var(--ida-audience-hidden-gap)), 20px, 0) rotate(8deg) scale(0.8);
+  z-index: 0;
+}
+
+.ida-audience-card-figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  width: 100%;
+  height: var(--ida-panel-image-height, 180px);
+  background: #d9dde1;
+  box-shadow: 0 18px 28px rgba(0, 0, 0, 0.24);
+}
+
+.ida-audience-card-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ida-audience-card-title {
+  margin: 0;
+  max-width: var(--ida-panel-title-width, 260px);
+  color: rgba(255, 255, 255, 0.97);
+  font-size: clamp(1.02rem, 1.08vw, 1.34rem);
+  font-weight: 500;
+  line-height: 1.12;
+  text-align: center;
+  text-wrap: balance;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.46);
+}
+
+.ida-audience-card.is-active .ida-audience-card-title {
+  font-size: clamp(1.24rem, 1.42vw, 1.68rem);
+  font-weight: 700;
+}
+
+.ida-audience-card.is-exit-left .ida-audience-card-title,
+.ida-audience-card.is-enter-right .ida-audience-card-title {
+  font-size: clamp(0.92rem, 0.9vw, 1.02rem);
+  line-height: 1.12;
+}
+
+.ida-audience-card.is-exit-left .ida-audience-card-title,
+.ida-audience-card.is-enter-right .ida-audience-card-title {
+  opacity: 0.96;
+}
+
+@media (max-width: 1399px) {
+  body.ida-homepage-active .ch-header-area .ch-menu {
+    gap: 18px;
+  }
+
+  .ida-network-hero {
+    --ida-network-circle-size: 470px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .ida-network-layout,
+  .ida-impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ida-network-content {
+    padding-left: 0;
+    max-width: 760px;
+    padding-top: 42px;
+  }
+
+  .ida-network-copy {
+    min-height: 132px;
+  }
+
+  .ida-network-copy-line {
+    white-space: normal;
+  }
+
+  .ida-network-visual {
+    min-height: 500px;
+  }
+
+  .ida-impact-media {
+    margin: 0 auto 0 0;
+    width: min(100%, 428px);
+    min-height: 360px;
+  }
+
+  .ida-offers-top-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ida-offers-bottom-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ida-offers-card--structured,
+  .ida-offers-card--digital,
+  .ida-offers-card--collaborative,
+  .ida-offers-card--global {
+    margin-top: 0;
+  }
+
+  .ida-audience-stage {
+    min-height: var(--ida-audience-stage-height, 274px);
+    padding-top: 0;
+  }
+
+  .ida-goal-frame {
+    min-height: 384px;
+    padding: 34px 20px 30px;
+    gap: 10px;
+  }
+
+  .ida-goal-grid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+    gap: 26px;
+  }
+
+  .ida-goal-copy {
+    padding: 0;
+  }
+
+  .ida-goal-copy p {
+    max-width: 860px;
+  }
+
+  .ida-goal-visual {
+    justify-content: center;
+    padding-right: 0;
+    padding-bottom: 10px;
+  }
+
+  .ida-cta-section {
+    padding: 20px 0 44px;
+  }
+
+  .ida-cta-actions {
+    margin-top: 34px;
+  }
+
+  .ida-footer-grid {
+    grid-template-columns: minmax(240px, 0.9fr) repeat(3, minmax(160px, 1fr));
+    gap: 32px;
+  }
+}
+
+@media (max-width: 991px) {
+  body.ida-homepage-active .ch-header-area .header-main-shell {
+    padding: 10px 18px;
+  }
+
+  body.ida-homepage-active .ch-header-area > .container.relative {
+    padding: 10px 18px;
+  }
+
+  body.ida-homepage-active .ch-header-area .ch-header-logo-wrapper,
+  body.ida-homepage-active .ch-header-area .logo,
+  body.ida-homepage-active .ch-header-area .ch-header-logo-wrapper img {
+    height: 42px;
+  }
+
+  .ida-network-hero {
+    --ida-network-circle-size: 420px;
+    padding: 34px 0 104px;
+  }
+
+  .ida-network-layout,
+  .ida-impact-shell,
+  .ida-offers-shell,
+  .ida-goal-shell,
+  .ida-audience-shell,
+  .ida-cta-shell,
+  .ida-footer-shell {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .ida-network-title {
+    margin-bottom: 26px;
+    font-size: clamp(2.8rem, 11vw, 4.1rem);
+  }
+
+  .ida-network-copy {
+    font-size: 1.15rem;
+  }
+
+  .ida-network-visual {
+    min-height: 440px;
+  }
+
+  .ida-impact-section,
+  .ida-offers-section,
+  .ida-goal-section,
+  .ida-audience-section {
+    padding-bottom: 86px;
+  }
+
+  .ida-goal-section {
+    padding-bottom: 36px;
+  }
+
+  .ida-goal-frame {
+    min-height: 362px;
+    gap: 12px;
+    padding: 32px 18px 26px;
+  }
+
+  .ida-goal-image {
+    width: min(100%, 316px);
+  }
+
+  .ida-cta-section {
+    padding: 18px 0 40px;
+  }
+
+  .ida-cta-copy {
+    max-width: 960px;
+    margin-top: 18px;
+  }
+
+  .ida-cta-actions {
+    gap: 18px;
+    margin-top: 30px;
+  }
+
+  .ida-cta-button {
+    min-width: 252px;
+    min-height: 56px;
+    padding: 0 28px;
+  }
+
+  .ida-footer-section {
+    padding-top: 26px;
+  }
+
+  .ida-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 32px;
+  }
+
+  .ida-footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .ida-footer-brand-card {
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .ida-audience-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .ida-audience-stage {
+    min-height: var(--ida-audience-stage-height, 258px);
+    padding-top: 0;
+  }
+
+  .ida-impact-media {
+    width: min(100%, 420px);
+    min-height: 354px;
+  }
+
+  .ida-impact-media-card--wide {
+    left: 34px;
+    top: 118px;
+    width: 174px;
+    height: 226px;
+  }
+
+  .ida-impact-media-card--tall {
+    left: 226px;
+    width: 164px;
+    height: 228px;
+  }
+
+  .ida-impact-outline {
+    left: 10px;
+    top: 84px;
+    width: 178px;
+    height: 236px;
+  }
+
+  .ida-impact-stats-shell {
+    left: 168px;
+    top: 238px;
+    padding: 6px;
+  }
+
+  .ida-impact-stats-card {
+    min-width: 236px;
+    padding: 14px 17px 12px;
+  }
+
+  .ida-offers-title {
+    font-size: clamp(3rem, 10vw, 4.2rem);
+  }
+
+  .ida-offers-accent-primary {
+    width: 220px;
+    height: 12px;
+  }
+
+  .ida-offers-accent-secondary {
+    width: 54px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ida-network-layout,
+  .ida-impact-shell,
+  .ida-offers-shell,
+  .ida-goal-shell,
+  .ida-audience-shell,
+  .ida-cta-shell,
+  .ida-footer-shell {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .ida-network-points {
+    max-width: none;
+  }
+
+  .ida-network-copy {
+    min-height: 118px;
+  }
+
+  .ida-network-visual {
+    min-height: 320px;
+  }
+
+  .ida-network-hero {
+    --ida-network-circle-size: 300px;
+  }
+
+  .ida-impact-grid {
+    gap: 34px;
+  }
+
+  .ida-goal-section {
+    padding-bottom: 28px;
+  }
+
+  .ida-goal-frame {
+    min-height: 0;
+    gap: 10px;
+    padding: 26px 14px 20px;
+  }
+
+  .ida-goal-title {
+    padding: 0 10px;
+    font-size: clamp(1.7rem, 7vw, 2.5rem);
+    line-height: 1.12;
+  }
+
+  .ida-goal-grid {
+    padding: 0 6px;
+    gap: 22px;
+  }
+
+  .ida-cta-section {
+    padding: 18px 0 34px;
+  }
+
+  .ida-cta-copy {
+    max-width: 100%;
+    margin-top: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .ida-cta-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .ida-cta-button {
+    width: min(100%, 320px);
+    min-width: 0;
+    min-height: 54px;
+  }
+
+  .ida-goal-copy p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .ida-goal-image {
+    width: min(100%, 248px);
+  }
+
+  .ida-audience-section {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .ida-audience-stage {
+    min-height: 0;
+    padding: 28px 18px 24px;
+    border-radius: 34px;
+    background: linear-gradient(180deg, rgba(12, 17, 29, 0.98), rgba(8, 12, 22, 0.98));
+  }
+
+  .ida-audience-strip {
+    display: none;
+  }
+
+  .ida-audience-track {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    min-height: 0;
+    gap: 22px 18px;
+    padding-top: 0;
+    perspective: none;
+  }
+
+  .ida-audience-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none !important;
+    z-index: auto;
+  }
+
+  .ida-audience-card.is-edge-left,
+  .ida-audience-card.is-exit-left,
+  .ida-audience-card.is-left,
+  .ida-audience-card.is-active,
+  .ida-audience-card.is-right,
+  .ida-audience-card.is-edge-right,
+  .ida-audience-card.is-enter-right {
+    --ida-panel-width: auto;
+    --ida-panel-image-height: auto;
+    --ida-panel-title-width: 100%;
+  }
+
+  .ida-audience-card-figure {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.08 / 0.82;
+  }
+
+  .ida-impact-media {
+    width: min(100%, 350px);
+    min-height: 332px;
+  }
+
+  .ida-impact-outline {
+    left: 4px;
+    top: 94px;
+    width: 150px;
+    height: 198px;
+    border-width: 2px;
+  }
+
+  .ida-impact-media-card--wide {
+    left: 18px;
+    top: 122px;
+    width: 148px;
+    height: 192px;
+  }
+
+  .ida-impact-media-card--tall {
+    left: 176px;
+    width: 136px;
+    height: 192px;
+  }
+
+  .ida-impact-stats-shell {
+    left: 128px;
+    top: 216px;
+    right: 16px;
+    padding: 6px;
+  }
+
+  .ida-impact-stats-card {
+    min-width: 0;
+    padding: 18px 20px;
+  }
+
+  .ida-impact-stat-row {
+    gap: 10px;
+  }
+
+  .ida-impact-stat-number {
+    font-size: 2.4rem;
+  }
+
+  .ida-impact-title,
+  .ida-audience-title {
+    font-size: clamp(2.1rem, 8vw, 3.1rem);
+  }
+
+  .ida-impact-copy p,
+  .ida-audience-copy,
+  .ida-offers-card-body p {
+    font-size: 1rem;
+  }
+
+  .ida-offers-top-row,
+  .ida-offers-bottom-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ida-audience-stage {
+    padding: 26px 16px 24px;
+    border-radius: 28px;
+  }
+
+  .ida-audience-track {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .ida-audience-card-title {
+    font-size: 1.18rem;
+  }
+
+  .ida-offers-card {
+    box-shadow: 6px 7px 0 var(--ida-card-shadow);
+  }
+
+  .ida-footer-section {
+    padding: 24px 0 18px;
+  }
+
+  .ida-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ida-footer-brand-card {
+    gap: 16px;
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+
+  .ida-footer-brand-logo {
+    width: min(100%, 164px);
+  }
+
+  .ida-footer-brand-title {
+    font-size: 1.3rem;
+  }
+
+  .ida-footer-brand-text {
+    margin-top: 10px !important;
+    font-size: 1.06rem;
+  }
+
+  .ida-footer-nav-title {
+    margin: 0 0 18px;
+    font-size: 1.6rem;
+  }
+
+  .ida-footer-nav-title::after {
+    width: 48px;
+    margin-top: 10px;
+  }
+
+  .ida-footer-nav-list {
+    gap: 14px;
+  }
+
+  .ida-footer-link,
+  .ida-footer-copyright {
+    font-size: 1rem;
+  }
+
+  .ida-footer-divider {
+    height: 2px;
+  }
+}
+
+body.ida-membership-page-active {
+  background: #f2f2f2;
+  overflow-x: hidden;
+}
+
+body.ida-login-page-active {
+  background: #f6f6f7;
+  overflow-x: hidden;
+}
+
+body.ida-login-page-active #root > form.ida-login-form {
+  margin: 0;
+}
+
+body.ida-login-page-active .ida-login-hero {
+  position: relative;
+  background: #ffffff;
+}
+
+body.ida-login-page-active .ida-login-hero-banner {
+  position: relative;
+  overflow: hidden;
+  height: clamp(290px, 28vw, 380px);
+  border-top: 2px solid rgba(15, 24, 38, 0.78);
+}
+
+body.ida-login-page-active .ida-login-hero-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(24, 20, 16, 0.08) 0%, rgba(24, 20, 16, 0.24) 100%);
+}
+
+body.ida-login-page-active .ida-login-hero-banner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+body.ida-login-page-active .ida-login-hero-card {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(calc(100% - 40px), 500px);
+  padding: 20px 28px 18px;
+  border-radius: 28px 28px 0 0;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 18px 36px rgba(43, 52, 68, 0.16);
+  text-align: center;
+  z-index: 2;
+}
+
+body.ida-login-page-active .ida-login-hero-title {
+  margin: 0;
+  color: #f16034;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+body.ida-login-page-active .ida-login-breadcrumb {
+  margin: 10px 0 0;
+  color: #98989a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.25vw, 1.28rem);
+  line-height: 1.3;
+}
+
+body.ida-login-page-active .ida-login-section {
+  position: relative;
+  min-height: 0;
+  padding: 56px 0 76px;
+  background: #f6f6f7;
+}
+
+body.ida-login-page-active .ida-login-shell {
+  width: min(100%, 1320px);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+body.ida-login-page-active .ida-login-layout {
+  --bs-gutter-x: 14px;
+  align-items: start;
+}
+
+body.ida-login-page-active .ida-login-showcase-column,
+body.ida-login-page-active .ida-login-panel-column {
+  display: flex;
+}
+
+body.ida-login-page-active .ida-login-showcase-card,
+body.ida-login-page-active .ida-login-panel {
+  width: 100%;
+}
+
+body.ida-login-page-active .ida-login-showcase-card {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 26px;
+  min-height: 0;
+  padding: 10px 32px 20px 8px;
+  background: transparent;
+  color: #1f2428;
+}
+
+body.ida-login-page-active .ida-login-showcase-logo {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding-left: 4px;
+}
+
+body.ida-login-page-active .ida-login-showcase-logo img {
+  width: auto;
+  max-width: 86px;
+  max-height: 46px;
+  object-fit: contain;
+  filter: none;
+}
+
+body.ida-login-page-active .ida-login-showcase-copy {
+  max-width: 540px;
+  padding-top: 0;
+}
+
+body.ida-login-page-active .ida-login-showcase-text,
+body.ida-login-page-active .ida-login-showcase-feature-text {
+  margin: 0;
+}
+
+body.ida-login-page-active .ida-login-showcase-title,
+body.ida-login-page-active .ida-login-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+body.ida-login-page-active .ida-login-showcase-title {
+  color: #f16034;
+  font-size: clamp(2.3rem, 3vw, 3rem);
+  font-weight: 700;
+  line-height: 1.02;
+}
+
+body.ida-login-page-active .ida-login-showcase-text {
+  max-width: 520px;
+  margin-top: 16px;
+  color: #5f6f83;
+  font-size: 1.03rem;
+  line-height: 1.7;
+}
+
+body.ida-login-page-active .ida-login-showcase-features {
+  display: grid;
+  gap: 18px;
+  max-width: 640px;
+  padding-top: 14px;
+}
+
+body.ida-login-page-active .ida-login-showcase-feature {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 18px 20px;
+  border: 1px solid rgba(111, 153, 200, 0.18);
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(106, 133, 169, 0.1);
+}
+
+body.ida-login-page-active .ida-login-showcase-feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(111, 153, 200, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(111, 153, 200, 0.14);
+}
+
+body.ida-login-page-active .ida-login-showcase-feature-icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+body.ida-login-page-active .ida-login-showcase-feature-title {
+  margin: 0 0 4px;
+  color: #6989b6;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+body.ida-login-page-active .ida-login-showcase-feature-text {
+  color: #6f7f92;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+body.ida-login-page-active .ida-login-panel-column {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+body.ida-login-page-active .ida-login-panel {
+  margin-top: 0;
+  padding: 24px 24px 22px;
+  border: 1px solid rgba(111, 153, 200, 0.18);
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 18px 36px rgba(106, 133, 169, 0.12);
+}
+
+body.ida-login-page-active .ida-login-intro {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+body.ida-login-page-active .ida-login-intro-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(111, 153, 200, 0.18);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(106, 133, 169, 0.16);
+}
+
+body.ida-login-page-active .ida-login-intro-icon img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+body.ida-login-page-active .ida-login-title {
+  color: #6989b6;
+  font-size: clamp(1.85rem, 2.1vw, 2.15rem);
+  line-height: 1.08;
+}
+
+body.ida-login-page-active .ida-login-subtitle {
+  margin: 0;
+  max-width: 290px;
+  color: #7a8898;
+  font-size: 0.96rem;
+  line-height: 1.45;
+}
+
+body.ida-login-page-active .ida-login-fields .mb-24,
+body.ida-login-page-active .ida-login-panel .mb-24 {
+  margin-bottom: 8px !important;
+}
+
+body.ida-login-page-active .ida-login-panel .personal-info-label {
+  display: none;
+}
+
+body.ida-login-page-active .ida-login-panel .personal-info-input {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid rgba(111, 153, 200, 0.22);
+  border-radius: 14px;
+  background: #f8fafc;
+  color: #52657c;
+  font-size: 0.96rem;
+}
+
+body.ida-login-page-active .ida-login-panel .personal-info-input::placeholder {
+  color: #9aa8b6;
+  opacity: 1;
+}
+
+body.ida-login-page-active .ida-login-panel .personal-info-input:focus {
+  border-color: rgba(111, 153, 200, 0.5);
+  box-shadow: 0 0 0 3px rgba(111, 153, 200, 0.12);
+}
+
+body.ida-login-page-active .ida-login-panel .position-relative > button {
+  color: #7a8898;
+}
+
+body.ida-login-page-active .ida-login-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  margin: 14px 0 10px !important;
+  padding: 0 24px;
+  border: 1px solid #ef5e34;
+  border-radius: 14px;
+  background: #f16034;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: none !important;
+  box-shadow: 0 12px 24px rgba(241, 96, 52, 0.22);
+}
+
+body.ida-login-page-active .ida-login-register-wrap {
+  margin: 0 0 14px;
+}
+
+body.ida-login-page-active .ida-login-register {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 0 24px;
+  border: 1.5px solid #0a919c;
+  border-radius: 14px;
+  box-sizing: border-box;
+  background: #0a919c;
+  color: #fff;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: none !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+body.ida-login-page-active .ida-login-register:hover,
+body.ida-login-page-active .ida-login-register:focus-visible {
+  background: #6f99c8;
+  color: #ffffff;
+}
+
+body.ida-login-page-active .ida-login-utility-row {
+  display: block !important;
+  margin-bottom: 0 !important;
+}
+
+body.ida-login-page-active .ida-login-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 0;
+  color: #6f7f92;
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+body.ida-login-page-active .ida-login-forgot-link,
+body.ida-login-page-active .ida-login-support {
+  color: #6f7f92;
+  text-decoration: none;
+}
+
+body.ida-login-page-active .ida-login-social {
+  margin-top: 14px;
+  text-align: center;
+}
+
+body.ida-login-page-active .ida-login-social-label {
+  margin: 0 0 10px;
+  color: #6f7f92;
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+
+body.ida-login-page-active .ida-login-social-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+body.ida-login-page-active .ida-login-social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: #f8fafc;
+  box-shadow: inset 0 0 0 1px rgba(111, 153, 200, 0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.ida-login-page-active .ida-login-social-button:hover,
+body.ida-login-page-active .ida-login-social-button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(106, 133, 169, 0.14);
+}
+
+body.ida-login-page-active .ida-login-social-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+@media (max-width: 1199px) {
+  body.ida-login-page-active .ida-login-showcase-copy {
+    padding-top: 0;
+  }
+
+  body.ida-login-page-active .ida-login-showcase-title {
+    font-size: clamp(2.15rem, 3.6vw, 2.8rem);
+  }
+}
+
+@media (max-width: 991px) {
+  body.ida-login-page-active .ida-login-showcase-column {
+    order: 2;
+  }
+
+  body.ida-login-page-active .ida-login-panel-column {
+    order: 1;
+    margin-bottom: 18px;
+    justify-content: flex-start;
+  }
+
+  body.ida-login-page-active .ida-login-showcase-card {
+    min-height: 0;
+    padding-right: 0;
+  }
+
+  body.ida-login-page-active .ida-login-panel {
+    width: min(100%, 400px);
+  }
+}
+
+@media (max-width: 767px) {
+  body.ida-login-page-active .ida-login-section {
+    min-height: 0;
+    padding: 28px 0 48px;
+  }
+
+  body.ida-login-page-active .ida-login-shell {
+    padding: 0 16px;
+  }
+
+  body.ida-login-page-active .ida-login-hero-card {
+    width: min(calc(100% - 24px), 420px);
+    padding: 18px 20px 16px;
+  }
+
+  body.ida-login-page-active .ida-login-showcase-card {
+    padding: 0 0 12px;
+  }
+
+  body.ida-login-page-active .ida-login-panel {
+    border-radius: 22px;
+    padding: 20px 16px 18px;
+  }
+
+  body.ida-login-page-active .ida-login-showcase-feature {
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  body.ida-login-page-active .ida-login-showcase-feature-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  body.ida-login-page-active .ida-login-showcase-feature-icon img {
+    width: 36px;
+    height: 36px;
+  }
+
+  body.ida-login-page-active .ida-login-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+body.ida-collaborative-projects-page-active {
+  background: #f3f4f7;
+  overflow-x: hidden;
+}
+
+body.ida-project-idea-page-active {
+  background: #f3f4f7;
+  overflow-x: hidden;
+  color: #1e2a3a;
+}
+
+body.ida-global-network-application-page-active {
+  background: #f3f4f7;
+  overflow-x: hidden;
+  color: #1e2a3a;
+}
+
+body.ida-global-network-application-page-active *,
+body.ida-global-network-application-page-active *::before,
+body.ida-global-network-application-page-active *::after {
+  box-sizing: border-box;
+}
+
+[data-ida-global-network-application-page] {
+  position: relative;
+  z-index: 1;
+  background: #f3f4f7 !important;
+  color: #1e2a3a !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+[data-ida-global-network-application-page] > section {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+[data-ida-global-network-application-page] > section.ida-route-reveal-target,
+[data-ida-global-network-application-page] > section.ida-route-reveal-target.is-visible {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+  visibility: visible !important;
+}
+
+.ida-gn-application-shell {
+  width: min(1240px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.ida-gn-application-hero {
+  padding-bottom: 66px;
+}
+
+.ida-gn-application-hero-banner {
+  position: relative;
+  min-height: 250px;
+  overflow: hidden;
+  border-top: 2px solid rgba(15, 24, 38, 0.75);
+  border-bottom: 1px solid rgba(15, 24, 38, 0.24);
+  background: #17263a;
+}
+
+.ida-gn-application-hero-banner img {
+  display: block;
+  width: 100%;
+  min-height: 250px;
+  object-fit: cover;
+}
+
+.ida-gn-application-hero-card {
+  position: relative;
+  z-index: 2;
+  width: min(100% - 32px, 560px);
+  margin: -96px auto 0;
+  padding: 18px 28px 14px;
+  border-radius: 24px 24px 0 0;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(133, 155, 182, 0.24);
+  box-shadow: 0 20px 38px rgba(42, 55, 77, 0.16);
+  text-align: center;
+}
+
+.ida-gn-application-hero-title {
+  margin: 0;
+  color: #ff5528;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 3vw, 3.35rem);
+  line-height: 1;
+}
+
+.ida-gn-application-breadcrumb {
+  margin: 10px 0 0;
+  color: #4f5a6c;
+  font-size: 1rem;
+}
+
+.ida-gn-application-intro-section,
+.ida-gn-application-form-section {
+  padding-bottom: 34px;
+}
+
+.ida-gn-application-intro-card,
+.ida-gn-application-card,
+.ida-gn-application-stepper {
+  border: 1px solid #d2dde9;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(54, 80, 112, 0.1);
+}
+
+.ida-gn-application-intro-card {
+  padding: 28px;
+  border-radius: 24px;
+}
+
+.ida-gn-application-kicker {
+  margin: 0 0 8px;
+  color: #0a919c;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ida-gn-application-intro-title,
+.ida-gn-application-panel-title,
+.ida-gn-application-subsection-title {
+  margin: 0;
+  color: #12355b;
+}
+
+.ida-gn-application-intro-title {
+  font-size: clamp(1.7rem, 2vw, 2.35rem);
+  line-height: 1.15;
+}
+
+.ida-gn-application-intro-copy,
+.ida-gn-application-panel-note,
+.ida-gn-application-welcome-copy,
+.ida-gn-application-welcome-note,
+.ida-gn-application-help,
+.ida-gn-application-progress-help,
+.ida-gn-application-preview-note span {
+  color: #5f6d82;
+}
+
+.ida-gn-application-intro-copy {
+  margin: 14px 0 0;
+  max-width: 860px;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.ida-gn-application-section-heading {
+  margin-bottom: 22px;
+}
+
+.ida-gn-application-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.ida-gn-application-layout.is-welcome-step {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.ida-gn-application-layout.is-welcome-step .ida-gn-application-stepper,
+.ida-gn-application-layout.is-welcome-step .ida-gn-application-progress {
+  display: none;
+}
+
+.ida-gn-application-layout.is-welcome-step .ida-gn-application-actions {
+  justify-content: center;
+  border-top: 0;
+  padding-top: 0;
+}
+
+.ida-gn-application-layout.is-welcome-step .ida-gn-application-actions-group {
+  justify-content: center;
+}
+
+.ida-gn-application-stepper {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+  border-radius: 18px;
+}
+
+.ida-gn-application-step {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  color: #5f6d82;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ida-gn-application-step[aria-current="step"] {
+  background: #fff0d5;
+  color: #7a4204;
+  font-weight: 800;
+}
+
+.ida-gn-application-step-number {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e7eef7;
+  color: #12355b;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.ida-gn-application-step[aria-current="step"] .ida-gn-application-step-number {
+  background: #ff8a3c;
+  color: #ffffff;
+}
+
+.ida-gn-application-card {
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.ida-gn-application-progress {
+  display: grid;
+  gap: 10px;
+  padding: 24px 28px 16px;
+}
+
+.ida-gn-application-progress-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ida-gn-application-progress-label {
+  color: #1d5fa7;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.ida-gn-application-progress strong {
+  color: #12355b;
+  font-size: 0.9rem;
+}
+
+.ida-gn-application-progress-track {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e8eef6;
+}
+
+.ida-gn-application-progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff8a3c 0%, #0a919c 100%);
+  transition: width 180ms ease;
+}
+
+.ida-gn-application-panel {
+  display: none;
+  padding: 28px;
+}
+
+.ida-gn-application-panel.is-active {
+  display: block;
+}
+
+.ida-gn-application-panel--welcome {
+  min-height: 460px;
+  text-align: center;
+  place-content: center;
+}
+
+.ida-gn-application-panel--welcome.is-active {
+  display: grid;
+}
+
+.ida-gn-application-welcome-copy,
+.ida-gn-application-welcome-note {
+  max-width: 780px;
+  margin-inline: auto;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.ida-gn-application-welcome-copy {
+  margin-top: 22px;
+}
+
+.ida-gn-application-welcome-note {
+  margin-top: 18px;
+}
+
+.ida-gn-application-panel-note {
+  margin: 8px 0 0;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.ida-gn-application-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.ida-gn-application-field {
+  display: grid;
+  gap: 8px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.ida-gn-application-field--full {
+  grid-column: 1 / -1;
+}
+
+.ida-gn-application-label {
+  color: #1d5fa7;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.ida-gn-application-input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid #cfdae8;
+  border-radius: 12px;
+  background: #ffffff !important;
+  color: #172033 !important;
+  padding: 12px 14px;
+  font: inherit;
+  line-height: 1.45;
+}
+
+.ida-gn-application-input::placeholder {
+  color: #7b8698 !important;
+}
+
+.ida-gn-application-input:focus,
+.ida-gn-application-select:focus {
+  border-color: #6f9fc8;
+  outline: 2px solid rgba(111, 159, 200, 0.18);
+  outline-offset: 0;
+}
+
+.ida-gn-application-input--textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+
+.ida-gn-application-select {
+  appearance: none;
+}
+
+.ida-gn-application-help {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.ida-gn-application-inline-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #405067;
+  font-size: 0.9rem;
+}
+
+.ida-gn-application-choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ida-gn-application-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 16px;
+  border: 1px solid #cfdae8;
+  border-radius: 999px;
+  background: #f8fafc;
+  color: #23324a;
+  cursor: pointer;
+}
+
+.ida-gn-application-subsection-stack {
+  display: grid;
+  gap: 20px;
+  margin-top: 22px;
+}
+
+.ida-gn-application-subsection {
+  padding: 22px;
+  border: 1px solid #e0e7f0;
+  border-radius: 18px;
+  background: #f8fafc;
+}
+
+.ida-gn-application-subsection-title {
+  font-size: 1.15rem;
+}
+
+.ida-gn-application-document-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.ida-gn-application-upload-heading {
+  margin: 8px 0 0;
+  color: #12355b;
+  font-size: 1.05rem;
+}
+
+.ida-gn-application-document {
+  display: grid;
+  gap: 10px;
+  padding: 16px 18px;
+  border: 1px solid #e0e7f0;
+  border-radius: 16px;
+  background: #f8fafc;
+}
+
+.ida-gn-application-document strong {
+  display: block;
+  color: #12355b;
+  margin-bottom: 4px;
+}
+
+.ida-gn-application-preview-note {
+  display: grid;
+  gap: 6px;
+  margin-top: 22px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: #fff6ea;
+  color: #7a4204;
+}
+
+.ida-gn-application-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 28px 28px;
+  border-top: 1px solid #e7eef7;
+}
+
+.ida-gn-application-actions-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.ida-gn-application-button {
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.ida-gn-application-button:hover,
+.ida-gn-application-button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.ida-gn-application-button--primary,
+.ida-gn-application-button--submit {
+  background: linear-gradient(135deg, #1d5fa7, #0a919c);
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(18, 53, 91, 0.16);
+}
+
+.ida-gn-application-button--secondary {
+  border-color: #cfdae8;
+  background: #ffffff;
+  color: #12355b;
+}
+
+.ida-gn-application-button--ghost {
+  border-color: rgba(255, 85, 40, 0.22);
+  background: #fff7f2;
+  color: #ff5528;
+}
+
+.ida-gn-application-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.ida-gn-application-status {
+  min-height: 24px;
+  margin: 0;
+  padding: 0 28px 28px;
+  color: #0a919c;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+body.ida-project-idea-page-active *,
+body.ida-project-idea-page-active *::before,
+body.ida-project-idea-page-active *::after {
+  color: inherit;
+}
+
+[data-ida-project-idea-page] {
+  position: relative;
+  z-index: 1;
+  background: #ffffff !important;
+  color: #1e2a3a !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+[data-ida-project-idea-page] > section {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+[data-ida-project-idea-page] > section.ida-route-reveal-target,
+[data-ida-project-idea-page] > section.ida-route-reveal-target.is-visible {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+  visibility: visible !important;
+}
+
+.ida-project-idea-hero-banner {
+  position: relative;
+  overflow: hidden;
+  height: clamp(320px, 34vw, 470px);
+  min-height: 320px;
+  background: #17263a;
+  background-image: url("/assets/collaborative-projects/project-idea-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 28%;
+  border-top: 2px solid rgba(15, 24, 38, 0.86);
+  border-bottom: 1px solid rgba(15, 24, 38, 0.18);
+}
+
+.ida-project-idea-hero-banner img {
+  width: 100%;
+  height: 100%;
+  display: block !important;
+  object-fit: cover;
+  object-position: center 28%;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background: transparent !important;
+}
+
+.ida-project-idea-hero-card {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(calc(100% - 32px), 760px);
+  max-width: 92vw;
+  padding: 20px 36px 15px;
+  border-radius: 32px 32px 0 0;
+  background: rgba(255, 255, 255, 0.98) !important;
+  border: 1px solid rgba(133, 155, 182, 0.28);
+  box-shadow: 0 20px 34px rgba(42, 55, 77, 0.18);
+  text-align: center;
+  z-index: 3;
+}
+
+.ida-project-idea-hero-card .ida-collaborative-hero-title {
+  color: #ff5528 !important;
+}
+
+.ida-project-idea-breadcrumb {
+  color: #4f5a6c !important;
+}
+
+.ida-project-idea-intro-section,
+.ida-project-idea-form-section {
+  background: #ffffff !important;
+  color: #1e2a3a !important;
+}
+
+.ida-project-idea-intro-card,
+.ida-project-idea-form-card {
+  background: #ffffff !important;
+  border: 1px solid #d2dde9 !important;
+  box-shadow: 0 12px 28px rgba(54, 80, 112, 0.1) !important;
+  color: #1e2a3a !important;
+}
+
+.ida-project-idea-intro {
+  color: #334155 !important;
+}
+
+.ida-project-idea-note,
+.ida-project-idea-inline-note {
+  color: #5b697e !important;
+}
+
+.ida-project-idea-form-step {
+  color: #ff6b43 !important;
+}
+
+.ida-project-idea-form-card-title,
+.ida-project-idea-label,
+.ida-project-idea-section-title {
+  color: #1f2d41 !important;
+}
+
+.ida-project-idea-help {
+  color: #647186 !important;
+}
+
+.ida-route-hidden-original {
+  display: none !important;
+}
+
+[data-ida-collaborative-projects-page] {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+}
+
+[data-ida-project-idea-page] {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+}
+
+body.ida-membership-page-active .ida-membership-hidden-original {
+  display: none !important;
+}
+
+[data-ida-membership-page] {
+  position: relative;
+  z-index: 1;
+  background: #f2f2f2;
+}
+
+.ida-membership-shell {
+  width: min(100%, 1360px);
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.ida-membership-kicker,
+.ida-membership-breadcrumb {
+  margin: 0;
+  font-weight: 400;
+}
+
+.ida-membership-breadcrumb {
+  color: #a1a1a1;
+  font-size: 1.05rem;
+}
+
+.ida-membership-kicker {
+  color: #ff5b2e;
+  font-size: clamp(1.55rem, 1.7vw, 1.7rem);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.ida-membership-supports {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.ida-membership-hero-title,
+.ida-membership-tier-title,
+.ida-membership-supports-title {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.ida-membership-hero {
+  padding-bottom: 72px;
+  background: #f2f2f2;
+}
+
+.ida-membership-hero-banner {
+  position: relative;
+  min-height: 234px;
+  overflow: hidden;
+  border-top: 2px solid rgba(15, 24, 38, 0.75);
+  border-bottom: 1px solid rgba(15, 24, 38, 0.3);
+}
+
+.ida-membership-hero-banner img {
+  display: block;
+  width: 100%;
+  min-height: 234px;
+  object-fit: cover;
+}
+
+.ida-membership-hero-card {
+  position: relative;
+  z-index: 2;
+  width: min(100% - 32px, 460px);
+  margin: -97px auto 0;
+  padding: 12px 20px 10px;
+  border-radius: 18px 18px 0 0;
+  background: #ffffff;
+  text-align: center;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.08), 0 12px 24px rgba(0, 0, 0, 0.04);
+}
+
+.ida-membership-hero-title {
+  margin: 0;
+  color: #ff5b2e;
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  line-height: 1;
+}
+
+.ida-membership-hero-text,
+.ida-membership-support-copy,
+.ida-membership-tier-list li {
+  color: #535353;
+}
+
+.ida-membership-hero-text {
+  max-width: 1180px;
+  margin: 34px auto 0;
+  text-align: center;
+  font-size: clamp(1.35rem, 1.95vw, 1.65rem);
+  line-height: 1.4;
+  color: #202020;
+}
+
+.ida-membership-hero-text span {
+  color: #ff5b2e;
+}
+
+.ida-membership-supports-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 30px;
+}
+
+.ida-membership-support-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 10px 14px;
+  align-items: center;
+  min-height: 142px;
+  padding: 18px 26px 18px 22px;
+  border: 1.5px solid rgba(0, 0, 0, 0.18);
+  border-radius: 22px;
+  background: transparent;
+}
+
+.ida-membership-support-index {
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: #ff5a2a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ida-membership-support-title {
+  margin: 0;
+  color: #171717;
+  font-size: clamp(1.2rem, 1.2vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.ida-membership-support-copy {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.34;
+  color: #4d4d4d;
+}
+
+.ida-membership-accent-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 54px;
+}
+
+.ida-membership-accent-line {
+  width: 104px;
+  height: 4px;
+  background: #ff5b2e;
+  border-radius: 999px;
+}
+
+.ida-membership-accent-diamond {
+  width: 12px;
+  height: 12px;
+  background: #ff5b2e;
+  transform: rotate(45deg);
+}
+
+.ida-membership-eligibility-stage {
+  position: relative;
+  min-height: 220px;
+}
+
+.ida-membership-eligibility-text {
+  max-width: 940px;
+  margin: 0 auto;
+  text-align: center;
+  color: #6c9bc7;
+  font-size: clamp(1.5rem, 1.5vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.22;
+}
+
+.ida-membership-eligibility-text span {
+  color: #ff5b2e;
+}
+
+.ida-membership-keyword-stage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px 18px;
+  width: min(100%, 1120px);
+  margin: 28px auto 0;
+}
+
+.ida-membership-keyword-core {
+  display: none;
+}
+
+.ida-membership-keyword {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 10px 28px 12px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  background: #6f9ecb;
+  box-shadow: 0 10px 20px rgba(72, 104, 138, 0.08);
+  opacity: 0;
+  transform: translateY(18px) scale(0.9);
+  transition:
+    transform 900ms cubic-bezier(0.18, 0.8, 0.24, 1),
+    opacity 520ms ease,
+    background-color 220ms ease;
+}
+
+.ida-membership-eligibility.is-visible .ida-membership-keyword {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.ida-membership-eligibility.is-visible .ida-membership-keyword:nth-child(2) {
+  transition-delay: 40ms;
+}
+
+.ida-membership-eligibility.is-visible .ida-membership-keyword:nth-child(3) {
+  transition-delay: 100ms;
+}
+
+.ida-membership-eligibility.is-visible .ida-membership-keyword:nth-child(4) {
+  transition-delay: 160ms;
+}
+
+.ida-membership-eligibility.is-visible .ida-membership-keyword:nth-child(5) {
+  transition-delay: 220ms;
+}
+
+.ida-membership-eligibility.is-visible .ida-membership-keyword:nth-child(6) {
+  transition-delay: 280ms;
+}
+
+.ida-membership-eligibility.is-visible .ida-membership-keyword:nth-child(7) {
+  transition-delay: 340ms;
+}
+
+.ida-membership-tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.ida-membership-tier-card {
+  display: grid;
+  gap: 20px;
+  align-content: start;
+  min-height: 350px;
+  padding: 22px 32px 26px;
+  border: 2px solid rgba(0, 0, 0, 0.86);
+  border-radius: 22px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ida-membership-tier-label {
+  margin: 0;
+  color: #ff5528;
+  text-align: center;
+  font-size: clamp(1.45rem, 2vw, 1.95rem);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.ida-membership-tier-title {
+  margin: 0;
+  color: #6d9cca;
+  text-align: center;
+  font-size: clamp(1.4rem, 1.4vw, 1.4rem);
+  line-height: 1;
+}
+
+.ida-membership-tier-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ida-membership-tier-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.ida-membership-tier-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 0.02em;
+  color: #626262;
+  font-weight: 400;
+}
+
+.ida-membership-tier-action,
+.ida-membership-compare-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.ida-membership-tier-action {
+  min-width: 160px;
+  min-height: 38px;
+  margin: auto auto 0;
+  padding: 0 22px;
+  border: 3px solid #ff5b2e;
+  border-radius: 999px;
+  color: #446d9c;
+  font-size: clamp(1rem, 1.3vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ida-membership-tier-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 44px;
+}
+
+.ida-membership-compare-link {
+  min-width: 260px;
+  min-height: 54px;
+  padding: 0 28px;
+  border-radius: 999px;
+  background: #ff5b2e;
+  color: #ffffff;
+  font-size: clamp(1.35rem, 1.8vw, 1.7rem);
+  font-weight: 700;
+}
+
+.ida-membership-supports-heading {
+  margin-bottom: 24px;
+}
+
+.ida-membership-supports-title {
+  margin: 0;
+  color: #4b6f9e;
+  font-size: clamp(2rem, 2vw, 2rem);
+  line-height: 1;
+}
+
+.ida-membership-supports-accent {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.ida-membership-supports-accent-primary,
+.ida-membership-supports-accent-secondary {
+  display: block;
+  height: 12px;
+  border-radius: 999px;
+}
+
+.ida-membership-supports-accent-primary {
+  width: 186px;
+  background: #ff5b2e;
+}
+
+.ida-membership-supports-accent-secondary {
+  width: 52px;
+  background: #4b6f9e;
+}
+
+@media (max-width: 1199px) {
+  .ida-gn-application-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+  .ida-membership-supports-grid,
+  .ida-membership-tier-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ida-membership-tier-grid .ida-membership-tier-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .ida-gn-application-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ida-gn-application-stepper {
+    position: static;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ida-gn-application-step {
+    grid-template-columns: 28px 1fr;
+    min-height: 64px;
+  }
+
+  .ida-membership-hero-card {
+    width: min(100% - 32px, 300px);
+    margin-top: -48px;
+  }
+
+  .ida-membership-keyword-stage {
+    width: min(100%, 920px);
+  }
+}
+
+@media (max-width: 767px) {
+  .ida-gn-application-shell {
+    width: min(100% - 20px, 1240px);
+  }
+
+  .ida-gn-application-hero {
+    padding-bottom: 54px;
+  }
+
+  .ida-gn-application-hero-banner,
+  .ida-gn-application-hero-banner img {
+    min-height: 180px;
+  }
+
+  .ida-gn-application-hero-card {
+    width: min(100% - 24px, 330px);
+    margin-top: -42px;
+    padding: 14px 18px 10px;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .ida-gn-application-intro-card,
+  .ida-gn-application-panel,
+  .ida-gn-application-progress,
+  .ida-gn-application-actions {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .ida-gn-application-stepper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ida-gn-application-grid {
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+
+  .ida-gn-application-field,
+  .ida-gn-application-field--full {
+    grid-column: auto;
+  }
+
+  .ida-gn-application-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ida-gn-application-actions-group {
+    display: grid;
+    width: 100%;
+  }
+
+  .ida-gn-application-button {
+    width: 100%;
+  }
+
+  .ida-membership-shell {
+    padding: 0 16px;
+  }
+
+  .ida-membership-accent-heading {
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+
+  .ida-membership-accent-line {
+    width: 64px;
+  }
+
+  .ida-membership-hero {
+    padding-bottom: 56px;
+  }
+
+  .ida-membership-hero-banner,
+  .ida-membership-hero-banner img {
+    min-height: 160px;
+  }
+
+  .ida-membership-hero-card {
+    width: min(100% - 24px, 250px);
+    margin-top: -34px;
+    padding: 10px 16px 8px;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .ida-membership-supports-grid,
+  .ida-membership-tier-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ida-membership-tier-card {
+    padding: 22px 22px 24px;
+    min-height: 0;
+  }
+
+  .ida-membership-support-card {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 10px 12px;
+    min-height: 0;
+    padding: 18px 18px 18px 16px;
+  }
+
+  .ida-membership-support-index {
+    font-size: 2.2rem;
+  }
+
+  .ida-membership-eligibility-text {
+    font-size: 1.45rem;
+  }
+
+  .ida-membership-keyword-stage {
+    gap: 12px;
+  }
+
+  .ida-membership-keyword {
+    padding: 10px 20px 12px;
+  }
+
+  .ida-membership-compare-link {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.ida-benefits-shell {
+  width: min(100%, 1380px);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+.ida-benefits-intro-title,
+.ida-benefits-spotlight-title {
+  margin: 0;
+  color: #ff5b2e;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+
+.ida-benefits-intro-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.ida-benefits-intro-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  flex: 0 0 auto;
+}
+
+.ida-benefits-intro-line {
+  width: 92px;
+  height: 4px;
+  border-radius: 999px;
+  background: #ff5b2e;
+}
+
+.ida-benefits-intro-diamond {
+  width: 12px;
+  height: 12px;
+  background: #ff5b2e;
+  transform: rotate(45deg);
+  flex: 0 0 auto;
+}
+
+.ida-benefits-intro-accent .ida-benefits-intro-line + .ida-benefits-intro-diamond,
+.ida-benefits-intro-accent .ida-benefits-intro-diamond + .ida-benefits-intro-line {
+  margin-left: -2px;
+}
+
+.ida-benefits-intro-title {
+  color: #111111;
+  font-family: "Nunito", sans-serif;
+  font-size: clamp(1.7rem, 1.7vw, 1.7rem);
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.ida-benefits-intro-text {
+  max-width: 1080px;
+  margin: 18px auto 0;
+  color: #666666;
+  font-size: clamp(1.2rem, 1.7vw, 1.6rem);
+  line-height: 1.45;
+  text-align: center;
+}
+
+.ida-benefits-spotlight {
+  padding: 10px 0 50px;
+  background: #f2f2f2;
+}
+
+.ida-benefits-spotlight-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 540px);
+  gap: 72px;
+  align-items: center;
+  min-height: 470px;
+}
+
+.ida-benefits-spotlight-copy {
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ida-benefits-spotlight-title {
+  max-width: 1000px;
+  font-size: clamp(2.1rem, 2.1vw, 2.1rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.ida-benefits-spotlight-text {
+  max-width: 860px;
+  margin: 25px 0 0;
+  color: #111111;
+  font-size: clamp(1.4rem, 1.4vw, 1.4rem);
+  line-height: 1.42;
+}
+
+.ida-benefits-spotlight-stage {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 320px;
+}
+
+.ida-benefits-card-stack {
+  position: relative;
+  width: min(100%, 500px);
+  height: 320px;
+  perspective: 1600px;
+  isolation: isolate;
+  --ida-benefits-card-front: translate3d(0, 0, 0) rotate(0deg);
+  --ida-benefits-card-mid: translate3d(-42px, 17px, 0) rotate(-4deg);
+  --ida-benefits-card-far: translate3d(-84px, 34px, 0) rotate(-8deg);
+  --ida-benefits-card-swing: translate3d(82px, -20px, 0) rotate(12deg);
+  --ida-benefits-card-under: translate3d(-96px, 58px, 0) rotate(-10deg) scale(0.985);
+}
+
+.ida-benefits-card {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(100%, 390px);
+  height: 320px;
+  border: 4px solid #6f9fc8;
+  border-radius: 22px;
+  background: #f2f2f2;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 26px 52px rgba(41, 80, 121, 0.18);
+  backface-visibility: hidden;
+  transform-origin: 100% 50%;
+  will-change: transform;
+}
+
+.ida-benefits-card--front {
+  z-index: 3;
+  transform: var(--ida-benefits-card-front);
+}
+
+.ida-benefits-card--mid {
+  z-index: 2;
+  transform: var(--ida-benefits-card-mid);
+}
+
+.ida-benefits-card--far {
+  z-index: 1;
+  transform: var(--ida-benefits-card-far);
+}
+
+.ida-benefits-card--moving-out {
+  z-index: 4;
+  animation: ida-benefits-card-out 280ms cubic-bezier(0.31, 0.79, 0.38, 1) forwards;
+}
+
+.ida-benefits-card--moving-under {
+  z-index: 0;
+  animation: ida-benefits-card-under 520ms cubic-bezier(0.2, 0.72, 0.3, 1) forwards;
+}
+
+.ida-benefits-card--moving-front {
+  z-index: 3;
+  animation: ida-benefits-card-to-front 800ms cubic-bezier(0.23, 0.82, 0.32, 1) forwards;
+}
+
+.ida-benefits-card--moving-mid {
+  z-index: 2;
+  animation: ida-benefits-card-to-mid 800ms cubic-bezier(0.23, 0.82, 0.32, 1) forwards;
+}
+
+.ida-benefits-card-graphic {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff5b2e;
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    opacity 260ms ease,
+    transform 520ms ease;
+}
+
+.ida-benefits-card--front .ida-benefits-card-graphic,
+.ida-benefits-card--moving-front .ida-benefits-card-graphic {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes ida-benefits-card-out {
+  0% {
+    transform: var(--ida-benefits-card-front);
+  }
+
+  100% {
+    transform: var(--ida-benefits-card-swing);
+  }
+}
+
+@keyframes ida-benefits-card-under {
+  0% {
+    transform: var(--ida-benefits-card-swing);
+  }
+
+  100% {
+    transform: var(--ida-benefits-card-under);
+  }
+}
+
+@keyframes ida-benefits-card-to-front {
+  0% {
+    transform: var(--ida-benefits-card-mid);
+  }
+
+  100% {
+    transform: var(--ida-benefits-card-front);
+  }
+}
+
+@keyframes ida-benefits-card-to-mid {
+  0% {
+    transform: var(--ida-benefits-card-far);
+  }
+
+  100% {
+    transform: var(--ida-benefits-card-mid);
+  }
+}
+
+.ida-benefits-card-graphic svg,
+.ida-benefits-lottie,
+.ida-benefits-lottie > svg,
+.ida-benefits-graphic-image {
+  display: block;
+  width: 58%;
+  height: 58%;
+  overflow: visible;
+  object-fit: contain;
+}
+
+.ida-benefits-card-graphic--visibility svg,
+.ida-benefits-card-graphic--visibility .ida-benefits-lottie,
+.ida-benefits-card-graphic--visibility .ida-benefits-lottie > svg,
+.ida-benefits-graphic-image--visibility {
+  --ida-benefits-visibility-fill: #ff5528;
+  --ida-benefits-visibility-center-ring: #ffffff;
+  width: 64%;
+  height: 64%;
+}
+
+.ida-benefits-card-graphic--connection svg,
+.ida-benefits-card-graphic--connection .ida-benefits-lottie,
+.ida-benefits-card-graphic--connection .ida-benefits-lottie > svg,
+.ida-benefits-graphic-image--connection {
+  width: 52%;
+  height: 52%;
+}
+
+.ida-benefits-card-graphic--knowledge svg,
+.ida-benefits-card-graphic--knowledge .ida-benefits-lottie,
+.ida-benefits-card-graphic--knowledge .ida-benefits-lottie > svg,
+.ida-benefits-graphic-image--knowledge {
+  width: 46%;
+  height: 46%;
+}
+
+.ida-benefits-card-graphic--collaboration svg,
+.ida-benefits-card-graphic--collaboration .ida-benefits-lottie,
+.ida-benefits-card-graphic--collaboration .ida-benefits-lottie > svg,
+.ida-benefits-graphic-image--collaboration {
+  width: 100%;
+  height: 100%;
+}
+
+.ida-benefits-card-graphic--positioning svg,
+.ida-benefits-card-graphic--positioning .ida-benefits-lottie,
+.ida-benefits-card-graphic--positioning .ida-benefits-lottie > svg,
+.ida-benefits-graphic-image--positioning {
+  width: 48%;
+  height: 48%;
+}
+
+@media (max-width: 1199px) {
+  .ida-benefits-spotlight-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 470px);
+    gap: 42px;
+  }
+
+  .ida-benefits-spotlight-title {
+    font-size: clamp(3.7rem, 5.5vw, 5.8rem);
+  }
+
+  .ida-benefits-spotlight-text {
+    margin-top: 54px;
+  }
+
+  .ida-benefits-spotlight-stage {
+    min-height: 404px;
+  }
+
+  .ida-benefits-card-stack {
+    width: min(100%, 456px);
+    height: 404px;
+  }
+
+  .ida-benefits-card {
+    width: min(100%, 348px);
+    height: 404px;
+  }
+
+  .ida-benefits-card-stack {
+    --ida-benefits-card-mid: translate3d(-35px, 14px, 0) rotate(-4deg);
+    --ida-benefits-card-far: translate3d(-70px, 28px, 0) rotate(-8deg);
+    --ida-benefits-card-swing: translate3d(68px, -16px, 0) rotate(11deg);
+    --ida-benefits-card-under: translate3d(-80px, 48px, 0) rotate(-10deg) scale(0.985);
+  }
+}
+
+@media (max-width: 991px) {
+  .ida-benefits-intro {
+    padding-bottom: 24px;
+  }
+
+  .ida-benefits-intro-heading {
+    gap: 12px;
+  }
+
+  .ida-benefits-intro-accent {
+    justify-content: center;
+  }
+
+  .ida-benefits-spotlight {
+    padding: 24px 0 84px;
+  }
+
+  .ida-benefits-spotlight-grid {
+    grid-template-columns: 1fr;
+    gap: 54px;
+    min-height: 0;
+  }
+
+  .ida-benefits-spotlight-copy {
+    max-width: 100%;
+  }
+
+  .ida-benefits-spotlight-title {
+    font-size: clamp(3.15rem, 9vw, 5.2rem);
+  }
+
+  .ida-benefits-spotlight-text {
+    max-width: 720px;
+    margin-top: 42px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ida-benefits-spotlight-stage {
+    justify-content: center;
+    min-height: 392px;
+  }
+
+  .ida-benefits-card-stack {
+    width: min(100%, 432px);
+    height: 392px;
+  }
+
+  .ida-benefits-card {
+    width: min(100%, 336px);
+    height: 392px;
+  }
+
+  .ida-benefits-card-stack {
+    --ida-benefits-card-mid: translate3d(-28px, 12px, 0) rotate(-4deg);
+    --ida-benefits-card-far: translate3d(-56px, 24px, 0) rotate(-8deg);
+    --ida-benefits-card-swing: translate3d(56px, -14px, 0) rotate(11deg);
+    --ida-benefits-card-under: translate3d(-66px, 42px, 0) rotate(-10deg) scale(0.985);
+  }
+}
+
+@media (max-width: 767px) {
+  .ida-benefits-shell {
+    padding: 0 16px;
+  }
+
+  .ida-benefits-intro-heading {
+    display: block;
+  }
+
+  .ida-benefits-intro-accent {
+    display: none;
+  }
+
+  .ida-benefits-spotlight {
+    padding-bottom: 64px;
+  }
+
+  .ida-benefits-spotlight-title {
+    font-size: clamp(2.4rem, 12vw, 3.7rem);
+  }
+
+  .ida-benefits-spotlight-text {
+    margin-top: 30px;
+    font-size: 1.08rem;
+    line-height: 1.55;
+  }
+
+  .ida-benefits-spotlight-stage {
+    min-height: 310px;
+  }
+
+  .ida-benefits-card-stack {
+    width: min(100%, 324px);
+    height: 310px;
+  }
+
+  .ida-benefits-card {
+    width: min(100%, 262px);
+    height: 310px;
+  }
+
+  .ida-benefits-card-stack {
+    --ida-benefits-card-mid: translate3d(-20px, 9px, 0) rotate(-4deg);
+    --ida-benefits-card-far: translate3d(-40px, 18px, 0) rotate(-8deg);
+    --ida-benefits-card-swing: translate3d(40px, -10px, 0) rotate(10deg);
+    --ida-benefits-card-under: translate3d(-46px, 30px, 0) rotate(-10deg) scale(0.988);
+  }
+
+  .ida-benefits-card-graphic svg {
+    width: 60%;
+    height: 60%;
+  }
+}
+
+.ida-directory-shell {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 3.2vw, 42px);
+}
+
+.ida-directory-hero {
+  position: relative;
+  padding-bottom: 92px;
+  background: #fff;
+}
+
+.ida-directory-hero-banner {
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid rgba(15, 24, 38, 0.78);
+  border-bottom: 1px solid rgba(15, 24, 38, 0.16);
+}
+
+.ida-directory-hero-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(25, 37, 54, 0.02) 0%, rgba(25, 37, 54, 0.1) 100%);
+}
+
+.ida-directory-hero-banner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* object-fit: cover;
+  object-position: center 30%; */
+}
+
+.ida-directory-hero-card {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  transform: translateX(-50%);
+  width: min(calc(100% - 48px), 540px);
+  padding: 18px 34px 14px;
+  border-radius: 26px 26px 0 0;
+  background: #fff;
+  box-shadow: 0 14px 30px rgba(42, 55, 77, 0.08);
+  text-align: center;
+  z-index: 2;
+}
+
+.ida-directory-hero-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #ff5528;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 700;
+  line-height: 0.96;
+}
+
+.ida-directory-breadcrumb {
+  position: static;
+  margin: 6px 0 0;
+  color: #9f9f9f;
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.ida-directory-members-section {
+  padding: 110px 0 42px;
+  background: #ffffff;
+}
+
+.ida-directory-members-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.ida-directory-heading-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+.ida-directory-heading-accent span {
+  width: clamp(72px, 9vw, 124px);
+  height: 2px;
+  background: #ff5528;
+}
+
+.ida-directory-heading-accent i {
+  width: 14px;
+  height: 14px;
+  display: block;
+  background: #ff5528;
+  transform: rotate(45deg);
+}
+
+.ida-directory-section-title {
+  margin: 0;
+  color: #3f3f3f;
+  font-size: clamp(2rem, 2.7vw, 3rem);
+  font-weight: 700;
+  line-height: 1.02;
+}
+
+.ida-directory-member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: clamp(20px, 1.85vw, 30px);
+  align-items: stretch;
+}
+
+.ida-directory-member-card {
+  min-width: 0;
+  height: 100%;
+}
+
+.ida-directory-member-button {
+  position: relative;
+  width: 100%;
+  min-height: clamp(310px, 24vw, 360px);
+  height: 100%;
+  aspect-ratio: 5 / 6;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 18px 18px;
+  border: 1.5px solid #138595;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: none;
+  text-align: center;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.ida-directory-member-button:hover,
+.ida-directory-member-button:focus-visible,
+.ida-directory-member-card.is-active .ida-directory-member-button {
+  transform: translateY(-1px);
+  border-color: #138595;
+  background: #ffffff;
+  box-shadow: 0 12px 24px rgba(19, 133, 149, 0.1);
+}
+
+.ida-directory-member-card--partner .ida-directory-member-button,
+.ida-directory-member-card--partner .ida-directory-member-caption {
+  border-color: #d4af37;
+}
+
+.ida-directory-member-card--partner .ida-directory-member-button:hover,
+.ida-directory-member-card--partner .ida-directory-member-button:focus-visible,
+.ida-directory-member-card--partner.is-active .ida-directory-member-button {
+  border-color: #d4af37;
+  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.16);
+}
+
+.ida-directory-member-button:focus-visible,
+.ida-directory-more-button:focus-visible {
+  outline: 3px solid rgba(19, 133, 149, 0.22);
+  outline-offset: 3px;
+}
+
+.ida-directory-member-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #007b8c;
+  color: #ffffff;
+  line-height: 1;
+  box-shadow: 0 8px 16px rgba(0, 123, 140, 0.15);
+  z-index: 3;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.ida-directory-member-toggle-plus,
+.ida-directory-member-toggle-arrow {
+  position: absolute;
+  inset: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.ida-directory-member-toggle-plus {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.ida-directory-member-toggle-arrow {
+  opacity: 0;
+  transform: translateY(-2px);
+}
+
+.ida-directory-member-toggle-arrow svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.ida-directory-member-card.is-active .ida-directory-member-toggle {
+  background: #ff5528;
+}
+
+.ida-directory-member-card.is-active .ida-directory-member-toggle-plus {
+  opacity: 0;
+  transform: translateY(2px);
+}
+
+.ida-directory-member-card.is-active .ida-directory-member-toggle-arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ida-directory-member-share {
+  position: absolute;
+  top: 64px;
+  right: 16px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+
+.ida-directory-member-card.is-active .ida-directory-member-share {
+  display: inline-flex;
+}
+
+.ida-directory-member-share-pill {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #138595;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(19, 133, 149, 0.16);
+}
+
+.ida-directory-member-share-pill svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.ida-directory-member-figure {
+  width: 100%;
+  min-height: 188px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  padding: 28px 10px 0 0;
+}
+
+.ida-directory-member-figure img {
+  width: min(100%, 228px);
+  max-width: none;
+  max-height: clamp(150px, 12vw, 188px);
+  display: block;
+  object-fit: contain;
+}
+
+.ida-directory-member-caption {
+  width: 100%;
+  min-height: 0;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 5px;
+  margin-top: auto;
+  min-height: 78px;
+  padding: 12px 14px 11px;
+  border: 1.5px solid #138595;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.ida-directory-member-name {
+  margin: 0;
+  color: #000000;
+  font-size: clamp(0.98rem, 0.92vw, 1.05rem);
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.ida-directory-member-location {
+  margin: 0;
+  color: #3a3a3a;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.ida-directory-member-tier {
+  margin: 0;
+  color: #888888;
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.ida-directory-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
+}
+
+.ida-directory-more-button {
+  min-width: 186px;
+  min-height: 56px;
+  padding: 0 30px;
+  border: 0;
+  border-radius: 999px;
+  background: #ff5528;
+  color: #fafbfd;
+  font-size: 1.06rem;
+  font-weight: 700;
+  box-shadow: 0 16px 30px rgba(255, 85, 40, 0.18);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.ida-directory-more-button:hover,
+.ida-directory-more-button:focus-visible {
+  background: #f14a1c;
+  transform: translateY(-2px);
+  box-shadow: 0 20px 34px rgba(255, 85, 40, 0.24);
+}
+
+.ida-directory-map-section {
+  padding: 42px 0 66px;
+  scroll-margin-top: 110px;
+  background: #ffffff;
+}
+
+.ida-directory-map-heading {
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+.ida-directory-map-title {
+  margin: 0;
+  color: #4a6e99;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.04;
+}
+
+.ida-directory-map-title-accent {
+  width: 118px;
+  height: 4px;
+  margin: 14px auto 0;
+  border-radius: 999px;
+  background: #ff5528;
+}
+
+.ida-directory-map-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 18px;
+  align-items: stretch;
+  padding: 18px;
+  overflow: hidden;
+  border: 1.5px solid #ff8f6b;
+  border-radius: 34px;
+  background: #ffffff;
+}
+
+.ida-directory-info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: clamp(500px, 44vw, 560px);
+  padding: 42px 34px;
+  border-radius: 26px;
+  background: #138595;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.ida-directory-info-empty {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-height: 100%;
+  align-content: center;
+  align-items: center;
+  justify-items: start;
+  gap: 18px;
+  text-align: left;
+}
+
+.ida-directory-info-empty-copy {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.28;
+}
+
+.ida-directory-info-hand {
+  width: 72px;
+  height: 72px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.ida-directory-info-hand svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.ida-directory-info-content {
+  display: grid;
+  min-height: 100%;
+  gap: 22px;
+  grid-template-rows: auto 1fr auto;
+}
+
+.ida-directory-info-top {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+}
+
+.ida-directory-info-figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.ida-directory-info-figure img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: block;
+  object-fit: contain;
+  padding: 14px;
+}
+
+.ida-directory-info-heading {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.ida-directory-info-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ida-directory-info-name {
+  width: fit-content;
+  color: #ffffff;
+  font-size: clamp(1.58rem, 1.9vw, 2.05rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.ida-directory-info-name[aria-disabled="true"] {
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.ida-directory-info-address {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.ida-directory-info-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ida-directory-info-meta-label {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.ida-directory-info-meta-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #7fb5e0;
+  position: relative;
+}
+
+.ida-directory-info-meta-icon::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 4px;
+  width: 5px;
+  height: 8px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(45deg);
+}
+
+.ida-directory-info-pill {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  background: transparent;
+}
+
+.ida-directory-info-description {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.ida-directory-info-contact {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+  padding-top: 2px;
+}
+
+.ida-directory-info-contact-label {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  padding-right: 16px;
+  border-right: 1px solid rgba(255, 255, 255, 0.32);
+}
+
+.ida-directory-info-contact-values {
+  display: grid;
+  gap: 8px;
+}
+
+.ida-directory-info-contact-values p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.ida-directory-info-contact-values a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.ida-directory-info-contact-values a:hover,
+.ida-directory-info-contact-values a:focus-visible {
+  text-decoration: underline;
+}
+
+.ida-directory-info-social-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  vertical-align: top;
+}
+
+.ida-directory-info-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.ida-directory-info-social-link-icon {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.ida-directory-info-social-link-icon svg {
+  width: 13px;
+  height: 13px;
+  display: block;
+}
+
+.ida-directory-info-card.is-selected {
+  justify-content: flex-start;
+}
+
+.ida-directory-map-stage {
+  min-width: 0;
+  padding: 0;
+}
+
+.ida-directory-map-frame {
+  overflow: hidden;
+  min-height: clamp(500px, 44vw, 560px);
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.ida-directory-map-canvas {
+  position: relative;
+  min-height: clamp(500px, 44vw, 560px);
+  height: 100%;
+  border-radius: 26px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+  display: block;
+  padding: 10px;
+}
+
+.ida-directory-map-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 34% 32%, rgba(127, 181, 224, 0.16), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #fbfcfd 100%);
+}
+
+.ida-directory-vector-map {
+  width: 100%;
+  min-height: inherit;
+  height: 100%;
+}
+
+.ida-directory-vector-map .jsvmap-container,
+.ida-directory-vector-map .jsvmap-svg {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: transparent;
+}
+
+.ida-directory-vector-map .jsvmap-region,
+.ida-directory-vector-map .jsvmap-marker {
+  transition:
+    fill 180ms ease,
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.ida-directory-vector-map .jsvmap-zoom-btn {
+  display: none;
+}
+
+.jsvmap-tooltip {
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 12px;
+  background: #234f7f;
+  color: #ffffff;
+  font-size: 0.84rem;
+  font-weight: 700;
+  box-shadow: 0 18px 34px rgba(35, 79, 127, 0.2);
+}
+
+@media (max-width: 1199px) {
+  .ida-directory-member-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ida-directory-info-card,
+  .ida-directory-map-frame,
+  .ida-directory-map-canvas,
+  .ida-directory-vector-map {
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 991px) {
+  .ida-directory-shell {
+    padding: 0 24px;
+  }
+
+  .ida-directory-hero {
+    padding-bottom: 78px;
+  }
+
+  .ida-directory-hero-card {
+    width: min(calc(100% - 32px), 560px);
+    padding: 18px 26px 14px;
+    transform: translate(-50%, 34%);
+  }
+
+  .ida-directory-members-section {
+    padding-top: 96px;
+  }
+
+  .ida-directory-member-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ida-directory-map-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .ida-directory-info-card {
+    min-height: auto;
+    padding: 30px 26px;
+  }
+
+  .ida-directory-map-frame,
+  .ida-directory-map-canvas,
+  .ida-directory-vector-map {
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ida-directory-shell {
+    padding: 0 16px;
+  }
+
+  .ida-directory-hero {
+    padding-bottom: 66px;
+  }
+
+  .ida-directory-hero-card {
+    width: min(calc(100% - 20px), 360px);
+    padding: 16px 18px 12px;
+    border-radius: 24px 24px 0 0;
+    transform: translate(-50%, 30%);
+  }
+
+  .ida-directory-breadcrumb {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .ida-directory-members-section {
+    padding: 88px 0 42px;
+  }
+
+  .ida-directory-members-heading {
+    gap: 12px;
+  }
+
+  .ida-directory-heading-accent span {
+    width: 38px;
+  }
+
+  .ida-directory-heading-accent i {
+    width: 10px;
+    height: 10px;
+  }
+
+  .ida-directory-member-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .ida-directory-member-button {
+    min-height: 286px;
+    aspect-ratio: auto;
+    padding: 16px 16px 14px;
+  }
+
+  .ida-directory-member-figure {
+    min-height: 158px;
+  }
+
+  .ida-directory-member-toggle {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .ida-directory-member-toggle-plus {
+    font-size: 1.18rem;
+  }
+
+  .ida-directory-member-share {
+    top: 56px;
+    right: 12px;
+  }
+
+  .ida-directory-member-caption {
+    padding: 10px 12px 9px;
+  }
+
+  .ida-directory-more {
+    margin-top: 30px;
+  }
+
+  .ida-directory-map-section {
+    padding-bottom: 44px;
+  }
+
+  .ida-directory-map-frame {
+    border-radius: 0 0 24px 24px;
+  }
+
+  .ida-directory-info-empty {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .ida-directory-info-top,
+  .ida-directory-info-contact {
+    grid-template-columns: 1fr;
+  }
+
+  .ida-directory-info-contact-label {
+    padding-right: 0;
+    border-right: 0;
+  }
+
+  .ida-directory-info-card {
+    padding: 26px 20px;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .ida-directory-map-canvas,
+  .ida-directory-vector-map {
+    min-height: 340px;
+  }
+
+  .ida-directory-map-grid {
+    padding: 12px;
+    border-radius: 26px;
+  }
+
+  .ida-directory-info-empty-copy {
+    max-width: 240px;
+  }
+
+  .ida-directory-info-name {
+    font-size: 1.8rem;
+  }
+
+  .ida-directory-info-address,
+  .ida-directory-info-description,
+  .ida-directory-info-contact-values p {
+    font-size: 0.95rem;
+  }
+}
+
+.ida-collaborative-shell {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(28px, 3.2vw, 46px);
+}
+
+.ida-collaborative-hero {
+  position: relative;
+  background: #ffffff;
+}
+
+.ida-collaborative-hero-banner {
+  position: relative;
+  overflow: hidden;
+  height: clamp(320px, 34vw, 470px);
+  border-top: 2px solid rgba(15, 24, 38, 0.78);
+  border-bottom: 1px solid rgba(15, 24, 38, 0.16);
+}
+
+.ida-collaborative-hero-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(25, 37, 54, 0.04) 0%, rgba(25, 37, 54, 0.12) 48%, rgba(25, 37, 54, 0.26) 100%);
+}
+
+.ida-collaborative-hero-banner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.ida-collaborative-hero-card {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(calc(100% - 48px), 760px);
+  padding: 20px 42px 15px;
+  border-radius: 32px 32px 0 0;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(133, 155, 182, 0.2);
+  box-shadow: 0 20px 34px rgba(42, 55, 77, 0.14);
+  text-align: center;
+  z-index: 2;
+}
+
+.ida-collaborative-hero-title,
+.ida-collaborative-section-title {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.ida-collaborative-hero-title {
+  margin: 0;
+  color: #ff5528;
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+}
+
+.ida-collaborative-breadcrumb {
+  margin: 6px 0 0;
+  color: #8d8d8d;
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.ida-collaborative-intro-section {
+  padding: 46px 0 28px;
+  background: #ffffff;
+}
+
+.ida-collaborative-intro-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.ida-collaborative-intro {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  color: #3f4754;
+  font-size: clamp(1.08rem, 1.42vw, 1.24rem);
+  font-weight: 500;
+  line-height: 1.62;
+}
+
+.ida-collaborative-work-section {
+  padding: 26px 0 30px;
+  background: #ffffff;
+}
+
+.ida-collaborative-section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  margin-bottom: 44px;
+}
+
+.ida-collaborative-section-title {
+  max-width: 760px;
+  margin: 0;
+  color: #4a6e99;
+  font-size: clamp(2rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.06;
+}
+
+.ida-collaborative-section-accent {
+  width: 86px;
+  height: 4px;
+  border-radius: 999px;
+  background: #ff6b43;
+}
+
+.ida-collaborative-work-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.ida-collaborative-work-card,
+.ida-collaborative-work-cta {
+  border-radius: 28px;
+}
+
+.ida-collaborative-work-card {
+  min-height: 260px;
+  padding: 28px 26px 24px;
+  background: #ffffff;
+  border: 1px solid #dfe7ef;
+  box-shadow: 0 12px 28px rgba(54, 80, 112, 0.08);
+}
+
+.ida-collaborative-work-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 22px;
+  border-radius: 18px;
+  background: #e7f0f7;
+  color: #ff6b43;
+}
+
+.ida-collaborative-work-icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.ida-collaborative-work-card-title,
+.ida-collaborative-work-cta-title {
+  margin: 0;
+  color: #34475d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.14;
+}
+
+.ida-collaborative-work-card-copy,
+.ida-collaborative-work-cta-copy {
+  margin: 14px 0 0;
+  color: #667489;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.62;
+}
+
+.ida-collaborative-work-cta {
+  grid-column: span 2;
+  min-height: 260px;
+  padding: 30px 32px 28px;
+  background: #edf5fb;
+  border: 1px solid #bfd4e7;
+  box-shadow: 0 12px 28px rgba(54, 80, 112, 0.08);
+}
+
+.ida-collaborative-work-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.ida-collaborative-work-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 2px solid #0a919c;
+  background: #0a919c;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.ida-collaborative-work-cta-button--primary {
+  background: #0a919c;
+  color: #ffffff;
+}
+
+.ida-collaborative-work-cta-button--secondary {
+  background: transparent;
+  color: #0a919c;
+}
+
+.ida-collaborative-work-cta-button:hover,
+.ida-collaborative-work-cta-button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.ida-collaborative-work-cta-button:focus-visible {
+  outline: 3px solid rgba(19, 133, 149, 0.2);
+  outline-offset: 3px;
+}
+
+.ida-project-idea-intro-section {
+  padding: 46px 0 24px;
+  background: #ffffff;
+}
+
+.ida-project-idea-intro-card {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 34px clamp(24px, 3vw, 42px);
+  border: 1px solid #dfe7ef;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbfe 100%);
+  box-shadow: 0 12px 28px rgba(54, 80, 112, 0.08);
+  text-align: center;
+}
+
+.ida-project-idea-intro,
+.ida-project-idea-note {
+  max-width: 980px;
+  margin: 0 auto;
+  color: #435064;
+  font-size: clamp(1rem, 1.32vw, 1.14rem);
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.ida-project-idea-note {
+  margin-top: 14px;
+  color: #667489;
+}
+
+.ida-project-idea-form-section {
+  padding: 24px 0 74px;
+  background: #ffffff;
+}
+
+.ida-project-idea-form {
+  display: grid;
+  gap: 24px;
+}
+
+.ida-project-idea-form-card {
+  padding: 30px clamp(22px, 2.8vw, 34px);
+  border: 1px solid #dfe7ef;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(54, 80, 112, 0.08);
+}
+
+.ida-project-idea-form-card-header {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.ida-project-idea-form-step {
+  margin: 0;
+  color: #ff6b43;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ida-project-idea-form-card-title {
+  margin: 0;
+  color: #34475d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.48rem, 1.8vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.ida-project-idea-form-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.ida-project-idea-form-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ida-project-idea-field,
+.ida-project-idea-fieldset {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.ida-project-idea-fieldset {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+}
+
+.ida-project-idea-label {
+  color: #34475d;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.ida-project-idea-help {
+  color: #7a8698;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.ida-project-idea-input {
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 16px;
+  box-sizing: border-box;
+  border: 1px solid #b9c9d9 !important;
+  border-radius: 16px;
+  background: #f8fbfe !important;
+  color: #1e2a3a !important;
+  -webkit-text-fill-color: #1e2a3a;
+  caret-color: #1e2a3a;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  opacity: 1 !important;
+  visibility: visible !important;
+  box-shadow: inset 0 1px 2px rgba(30, 42, 58, 0.05);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.ida-project-idea-input--textarea {
+  min-height: 148px;
+  resize: vertical;
+}
+
+.ida-project-idea-input::placeholder {
+  color: #6a7a91 !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #6a7a91;
+}
+
+.ida-project-idea-input:hover {
+  border-color: #b7cadb;
+}
+
+.ida-project-idea-input:focus {
+  outline: none;
+  border-color: #0a919c;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(10, 145, 156, 0.12);
+}
+
+.ida-project-idea-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ida-project-idea-choice-grid--stacked {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.ida-project-idea-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 52px;
+  padding: 14px 16px;
+  border: 1px solid #b9c9d9 !important;
+  border-radius: 16px;
+  background: #f8fbfe !important;
+  color: #283950 !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.45;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.ida-project-idea-choice > span {
+  color: #283950 !important;
+}
+
+.ida-project-idea-choice input {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: #0a919c;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.ida-project-idea-inline-note {
+  margin: 20px 0 0;
+  color: #667489;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.ida-project-idea-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+@media (max-width: 991px) {
+  .ida-collaborative-hero-banner {
+    height: 360px;
+  }
+
+  .ida-collaborative-hero-card {
+    width: min(calc(100% - 32px), 620px);
+    padding: 18px 30px 14px;
+    bottom: 18px;
+  }
+
+  .ida-collaborative-intro-section {
+    padding-top: 34px;
+  }
+
+  .ida-collaborative-section-heading {
+    margin-bottom: 34px;
+  }
+
+  .ida-collaborative-work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ida-collaborative-work-cta {
+    grid-column: span 2;
+  }
+
+  .ida-project-idea-intro-section {
+    padding-top: 34px;
+  }
+
+  .ida-project-idea-form-section {
+    padding-bottom: 64px;
+  }
+
+  .ida-project-idea-form-grid--two,
+  .ida-project-idea-choice-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .ida-collaborative-shell {
+    padding: 0 16px;
+  }
+
+  .ida-collaborative-hero-banner {
+    height: 270px;
+  }
+
+  .ida-collaborative-hero-card {
+    width: min(calc(100% - 20px), 420px);
+    padding: 16px 18px 12px;
+    border-radius: 24px;
+    bottom: 14px;
+  }
+
+  .ida-collaborative-breadcrumb {
+    font-size: 0.84rem;
+  }
+
+  .ida-collaborative-intro-section {
+    padding-top: 28px;
+  }
+
+  .ida-collaborative-section-heading {
+    gap: 14px;
+    margin-bottom: 26px;
+  }
+
+  .ida-collaborative-work-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .ida-collaborative-work-card,
+  .ida-collaborative-work-cta {
+    min-height: 0;
+    padding: 22px 20px;
+    border-radius: 24px;
+  }
+
+  .ida-collaborative-work-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 18px;
+    border-radius: 16px;
+  }
+
+  .ida-collaborative-work-card-title,
+  .ida-collaborative-work-cta-title {
+    font-size: 1.38rem;
+  }
+
+  .ida-collaborative-work-cta {
+    grid-column: auto;
+  }
+
+  .ida-collaborative-work-cta-actions {
+    margin-top: 22px;
+  }
+
+  .ida-collaborative-work-cta-button {
+    width: 100%;
+  }
+
+  .ida-project-idea-intro-section {
+    padding-top: 28px;
+  }
+
+  .ida-project-idea-intro-card,
+  .ida-project-idea-form-card {
+    padding: 22px 18px;
+    border-radius: 24px;
+  }
+
+  .ida-project-idea-form-card-header {
+    margin-bottom: 18px;
+  }
+
+  .ida-project-idea-form-actions {
+    gap: 12px;
+  }
+
+  .ida-project-idea-form-actions .ida-collaborative-work-cta-button {
+    width: 100%;
+  }
+}
+
+.ida-events-shell {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(28px, 3.2vw, 46px);
+}
+
+.ida-events-hero {
+  position: relative;
+  background: #ffffff;
+}
+
+.ida-events-hero-banner {
+  position: relative;
+  overflow: hidden;
+  height: clamp(300px, 31vw, 420px);
+  border-top: 2px solid rgba(15, 24, 38, 0.78);
+  border-bottom: 1px solid rgba(15, 24, 38, 0.16);
+}
+
+.ida-events-hero-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(25, 37, 54, 0.02) 0%, rgba(25, 37, 54, 0.16) 58%, rgba(25, 37, 54, 0.3) 100%);
+}
+
+.ida-events-hero-banner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 32%;
+}
+
+.ida-events-hero-card {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(calc(100% - 48px), 640px);
+  padding: 18px 36px 14px;
+  border-radius: 32px 32px 0 0;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(133, 155, 182, 0.2);
+  box-shadow: 0 20px 34px rgba(42, 55, 77, 0.14);
+  text-align: center;
+  z-index: 2;
+}
+
+.ida-events-hero-title,
+.ida-events-section-title,
+.ida-events-card-title,
+.ida-events-cta-title {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.ida-events-hero-title {
+  margin: 0;
+  color: #ff5528;
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 0.96;
+}
+
+.ida-events-breadcrumb {
+  margin: 4px 0 0;
+  color: #7d8797;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.ida-events-intro-section {
+  padding: 38px 0 28px;
+  background: #f3f4f7;
+}
+
+.ida-events-intro-card {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ida-events-intro {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  color: #111827;
+  font-size: clamp(1.08rem, 1.45vw, 1.28rem);
+  font-weight: 500;
+  line-height: 1.42;
+}
+
+.ida-events-intro span {
+  color: #ff6b43;
+}
+
+.ida-events-types-section {
+  padding: 8px 0 70px;
+  background: #f3f4f7;
+}
+
+.ida-events-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 0 auto 26px;
+  text-align: center;
+}
+
+.ida-events-heading-line {
+  width: clamp(86px, 10vw, 112px);
+  height: 3px;
+  border-radius: 999px;
+  background: #ff6a3c;
+  position: relative;
+}
+
+.ida-events-heading-line::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background: #ff6a3c;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.ida-events-section-heading .ida-events-heading-line:last-child::after {
+  left: -8px;
+  right: auto;
+}
+
+.ida-events-section-title {
+  margin: 0;
+  color: #476f9f;
+  font-size: clamp(2rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.04;
+}
+
+.ida-events-types-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ida-events-type-card {
+  min-height: 154px;
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+  padding: 20px 22px 18px;
+  border: 1px solid #d8dde6;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: none;
+  text-align: left;
+}
+
+.ida-events-type-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  border-radius: 10px;
+  background: #eef2f7;
+  color: #99a5b6;
+}
+
+.ida-events-type-icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  overflow: visible;
+}
+
+.ida-events-type-content {
+  display: grid;
+  gap: 8px;
+}
+
+.ida-events-type-card--chat .ida-events-type-icon,
+.ida-events-type-card--forum .ida-events-type-icon,
+.ida-events-type-card--regional .ida-events-type-icon,
+.ida-events-type-card--spotlight .ida-events-type-icon,
+.ida-events-type-card--strategy .ida-events-type-icon,
+.ida-events-type-card--conference .ida-events-type-icon {
+  color: #ff6a3c;
+}
+
+.ida-events-type-title {
+  margin: 0;
+  color: #475266;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.ida-events-type-copy {
+  margin: 0;
+  color: #7c889b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.ida-events-calendar-section {
+  padding: 0 0 70px;
+  background: #f3f4f7;
+}
+
+.ida-events-section-heading--calendar {
+  margin-bottom: 30px;
+}
+
+.ida-events-calendar-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.86fr) minmax(0, 0.56fr);
+  gap: 0;
+  align-items: start;
+}
+
+.ida-events-list-wrap,
+.ida-events-list {
+  display: grid;
+  gap: 0;
+}
+
+.ida-events-card {
+  --ida-events-row-bg: #0f889a;
+  --ida-events-date-bg: #0a8194;
+  --ida-events-row-rgb: 15, 136, 154;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 122px minmax(0, 1fr);
+  gap: 0;
+  align-items: stretch;
+  min-height: 148px;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(90deg, rgba(var(--ida-events-row-rgb), 0.98) 0%, rgba(var(--ida-events-row-rgb), 0.95) 100%);
+  box-shadow: none;
+}
+
+.ida-events-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  width: 100%;
+  background: #ff6b43;
+  z-index: 3;
+}
+
+.ida-events-card--chat {
+  --ida-events-row-bg: #0d899b;
+  --ida-events-date-bg: #0f899b;
+  --ida-events-row-rgb: 13, 137, 155;
+}
+
+.ida-events-card--spotlight {
+  --ida-events-row-bg: #6e8fbb;
+  --ida-events-date-bg: #5f83b4;
+  --ida-events-row-rgb: 110, 143, 187;
+}
+
+.ida-events-card--strategy {
+  --ida-events-row-bg: #0d899b;
+  --ida-events-date-bg: #0f899b;
+  --ida-events-row-rgb: 13, 137, 155;
+}
+
+.ida-events-card--regional {
+  --ida-events-row-bg: #7d69bf;
+  --ida-events-date-bg: #715eb8;
+  --ida-events-row-rgb: 125, 105, 191;
+}
+
+.ida-events-card--forum {
+  --ida-events-row-bg: #6f95cf;
+  --ida-events-date-bg: #5f86cb;
+  --ida-events-row-rgb: 111, 149, 207;
+}
+
+.ida-events-card--conference {
+  --ida-events-row-bg: #2d9fb9;
+  --ida-events-date-bg: #1f8ea8;
+  --ida-events-row-rgb: 45, 159, 185;
+}
+
+.ida-events-card-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 10px;
+  background: var(--ida-events-date-bg);
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.ida-events-card-month {
+  order: 2;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ida-events-card-day {
+  order: 1;
+  font-size: clamp(3rem, 3.4vw, 3.35rem);
+  font-weight: 700;
+  line-height: 0.95;
+}
+
+.ida-events-card-body {
+  display: grid;
+  align-content: center;
+  min-width: 0;
+  max-width: min(100%, calc(100% - clamp(146px, 20vw, 206px)));
+  padding: 16px clamp(92px, 11vw, 132px) 14px 22px;
+  position: relative;
+  z-index: 2;
+}
+
+.ida-events-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.ida-events-chip--chat {
+  background: #ff6b43;
+  color: #ffffff;
+}
+
+.ida-events-chip--spotlight {
+  background: #f1bb4f;
+  color: #ffffff;
+}
+
+.ida-events-chip--strategy {
+  background: #84c13b;
+  color: #ffffff;
+}
+
+.ida-events-chip--regional {
+  background: #68afaa;
+  color: #ffffff;
+}
+
+.ida-events-chip--forum {
+  background: #9d6ea8;
+  color: #ffffff;
+}
+
+.ida-events-chip--conference {
+  background: #6886b4;
+  color: #ffffff;
+}
+
+.ida-events-card-title {
+  max-width: none;
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: clamp(1.08rem, 1.28vw, 1.44rem);
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+.ida-events-card-summary {
+  max-width: none;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.76rem;
+  line-height: 1.36;
+}
+
+.ida-events-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.ida-events-card-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 24px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(9, 25, 38, 0.44);
+  color: #ffffff;
+  font-size: 0.71rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ida-events-card-meta-pill--duration {
+  background: rgba(15, 136, 154, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+}
+
+.ida-events-card-meta-pill-icon {
+  width: 12px;
+  height: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ida-events-card-meta-pill-icon svg {
+  width: 12px;
+  height: 12px;
+  display: block;
+}
+
+.ida-events-card-calendar {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  padding: 0 11px;
+  min-height: 29px;
+  border: 1px solid rgba(255, 255, 255, 0.66);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #4a4d63;
+  font-size: 0.73rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.ida-events-card-calendar-label,
+.ida-events-card-calendar-plus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ida-events-card-calendar-plus {
+  font-size: 0.95rem;
+  color: #0f889a;
+}
+
+.ida-events-card-figure {
+  margin: 0;
+  position: absolute;
+  inset: 0;
+  width: auto;
+  min-height: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  box-shadow: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ida-events-card-figure::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(var(--ida-events-row-rgb), 0.99) 0%,
+      rgba(var(--ida-events-row-rgb), 0.985) 44%,
+      rgba(var(--ida-events-row-rgb), 0.9) 62%,
+      rgba(var(--ida-events-row-rgb), 0.48) 100%
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 58%, rgba(7, 16, 26, 0.12) 100%);
+}
+
+.ida-events-card-figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    radial-gradient(circle at 86% 48%, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.08) 18%, rgba(255, 255, 255, 0) 36%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, 0.12) 72%, rgba(255, 255, 255, 0.24) 100%);
+}
+
+.ida-events-card-figure img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0.62;
+  filter: saturate(0.9) contrast(1.02);
+}
+
+.ida-events-more {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.ida-events-more-button,
+.ida-events-cta-button {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.ida-events-more-button {
+  min-width: 144px;
+  min-height: 42px;
+  padding: 0 26px;
+  border: 1px solid #ff6b43;
+  border-radius: 999px;
+  background: #ff6b43;
+  color: #ffffff;
+  font-size: 0.84rem;
+  font-weight: 700;
+  box-shadow: none;
+}
+
+.ida-events-more-button:hover,
+.ida-events-more-button:focus-visible,
+.ida-events-cta-button:hover,
+.ida-events-cta-button:focus-visible,
+.ida-events-card-calendar:hover,
+.ida-events-card-calendar:focus-visible {
+  transform: translateY(-1px);
+}
+
+.ida-events-more-button:focus-visible,
+.ida-events-cta-button:focus-visible,
+.ida-events-card-calendar:focus-visible,
+.ida-events-filter-dropdown:focus-visible,
+.ida-events-clear-filters:focus-visible {
+  outline: 3px solid rgba(19, 133, 149, 0.2);
+  outline-offset: 3px;
+}
+
+.ida-events-filters {
+  display: grid;
+  gap: 0;
+  position: sticky;
+  top: 28px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.ida-events-clear-filters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 42px;
+  padding: 0 18px;
+  border: 0;
+  background: #0f889a;
+  color: #ff6b43;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ida-events-filter-group {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ida-events-filter-title {
+  display: none;
+}
+
+.ida-events-filter-stack {
+  display: grid;
+  gap: 0;
+}
+
+.ida-events-filter-band {
+  display: flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 18px;
+  border-radius: 0;
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.ida-events-filter-band--chat {
+  background: #ff6b43;
+}
+
+.ida-events-filter-band--spotlight {
+  background: #f0bb4f;
+}
+
+.ida-events-filter-band--strategy {
+  background: #84c13b;
+}
+
+.ida-events-filter-band--regional {
+  background: #68afaa;
+}
+
+.ida-events-filter-band--forum {
+  background: #a16ea9;
+}
+
+.ida-events-filter-band--conference {
+  background: #6585b4;
+}
+
+.ida-events-filter-dropdown {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 0;
+  background: #86a1c5;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  font-weight: 700;
+  box-shadow: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.ida-events-filter-dropdown-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ida-events-filter-dropdown-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ida-events-filter-dropdown-icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.ida-events-filter-dropdown--stack {
+  min-height: 52px;
+  background: #86a1c5;
+  border-top: 0;
+}
+
+.ida-events-filter-chevron {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid currentColor;
+}
+
+.ida-events-cta-section {
+  padding: 18px 0 78px;
+  background: #f3f4f7;
+}
+
+.ida-events-cta-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: grid;
+  gap: 26px;
+  justify-items: center;
+  padding: 48px clamp(24px, 3.2vw, 42px) 40px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #78a7d2 0%, #75a4d0 100%);
+  box-shadow: none;
+}
+
+.ida-events-cta-card::before,
+.ida-events-cta-card::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.ida-events-cta-card::before {
+  left: -4px;
+  bottom: 44px;
+  width: 252px;
+  height: 164px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='232' height='156' viewBox='0 0 232 156'%3E%3Cg fill='none' stroke='rgba(126,120,188,0.34)' stroke-width='1.4'%3E%3Cpath d='M22 94l18-10 18 10v21l-18 10-18-10z'/%3E%3Cpath d='M58 74l18-10 18 10v21l-18 10-18-10z'/%3E%3Cpath d='M94 94l18-10 18 10v21l-18 10-18-10z'/%3E%3Cpath d='M130 74l18-10 18 10v21l-18 10-18-10z'/%3E%3Cpath d='M166 94l18-10 18 10v21l-18 10-18-10z'/%3E%3C/g%3E%3Cg fill='none' stroke='rgba(126,120,188,0.2)' stroke-width='1.2'%3E%3Cpath d='M40 84V63l18-10'/%3E%3Cpath d='M76 64V43l18-10'/%3E%3Cpath d='M112 84V63l18-10'/%3E%3Cpath d='M148 64V43l18-10'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.72;
+  z-index: 0;
+}
+
+.ida-events-cta-card::after {
+  top: 20px;
+  right: -24px;
+  width: 266px;
+  height: 176px;
+  border-radius: 999px 0 0 999px;
+  background:
+    radial-gradient(circle at 18% 50%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 28%, rgba(255, 255, 255, 0) 62%),
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0 2px, rgba(255, 255, 255, 0) 2px 8px);
+  opacity: 0.52;
+  z-index: 0;
+}
+
+.ida-events-cta-orb {
+  position: absolute;
+  pointer-events: none;
+}
+
+.ida-events-cta-orb--left {
+  left: 50%;
+  bottom: -108px;
+  width: 384px;
+  height: 192px;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 0 0;
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.06) 24%, rgba(255, 255, 255, 0) 48%),
+    repeating-radial-gradient(circle at center, rgba(255, 255, 255, 0.18) 0 2px, rgba(255, 255, 255, 0) 2px 17px);
+  opacity: 0.28;
+  z-index: 0;
+}
+
+.ida-events-cta-orb--right {
+  display: none;
+}
+
+.ida-events-cta-copy,
+.ida-events-cta-actions {
+  position: relative;
+  z-index: 1;
+}
+
+.ida-events-cta-title {
+  margin: 0 0 12px;
+  color: #ff5528;
+  font-size: clamp(2.1rem, 3vw, 3.1rem);
+  font-weight: 700;
+  line-height: 0.98;
+}
+
+.ida-events-cta-text {
+  max-width: 880px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.08rem, 1.55vw, 1.28rem);
+  line-height: 1.46;
+  text-align: center;
+}
+
+.ida-events-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ida-events-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  min-width: 258px;
+  padding: 0 28px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+.ida-events-cta-button--primary {
+  background: #ff6b43;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.ida-events-cta-button--secondary {
+  background: rgba(118, 167, 212, 0.36);
+  color: #ffffff;
+  border-color: #ff6b43;
+}
+
+@media (max-width: 1199px) {
+  .ida-events-card {
+    grid-template-columns: 102px minmax(0, 1fr);
+  }
+
+  .ida-events-calendar-grid {
+    grid-template-columns: minmax(0, 1.45fr) minmax(250px, 0.78fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .ida-events-shell {
+    padding: 0 24px;
+  }
+
+  .ida-events-hero-card {
+    width: min(calc(100% - 32px), 560px);
+    padding: 18px 28px 14px;
+    bottom: 18px;
+  }
+
+  .ida-events-intro-section {
+    padding-top: 30px;
+  }
+
+  .ida-events-types-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ida-events-calendar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ida-events-filters {
+    position: static;
+    top: auto;
+  }
+
+  .ida-events-card {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .ida-events-card-body {
+    max-width: min(100%, calc(100% - 136px));
+    padding-right: 84px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ida-events-shell {
+    padding: 0 16px;
+  }
+
+  .ida-events-hero-banner {
+    height: 260px;
+  }
+
+  .ida-events-hero-card {
+    width: min(calc(100% - 20px), 390px);
+    padding: 16px 18px 12px;
+    border-radius: 24px;
+    bottom: 14px;
+  }
+
+  .ida-events-breadcrumb {
+    font-size: 0.84rem;
+  }
+
+  .ida-events-intro-section {
+    padding-top: 26px;
+  }
+
+  .ida-events-intro-card {
+    padding: 20px 18px;
+    border-radius: 24px;
+  }
+
+  .ida-events-section-heading {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .ida-events-heading-line {
+    width: 38px;
+  }
+
+  .ida-events-heading-line::after {
+    width: 10px;
+    height: 10px;
+  }
+
+  .ida-events-types-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ida-events-type-card {
+    min-height: 0;
+    padding: 20px 18px 18px;
+    border-radius: 24px;
+  }
+
+  .ida-events-calendar-section {
+    padding-bottom: 68px;
+  }
+
+  .ida-events-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 0;
+    border-radius: 24px;
+  }
+
+  .ida-events-card-date {
+    min-height: 90px;
+    padding: 12px;
+  }
+
+  .ida-events-card-body {
+    max-width: 100%;
+    padding: 0 16px 16px;
+  }
+
+  .ida-events-card-title {
+    font-size: 1.24rem;
+  }
+
+  .ida-events-card-figure {
+    min-height: 0;
+    border-radius: inherit;
+  }
+
+  .ida-events-filters {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .ida-events-cta-section {
+    padding-bottom: 60px;
+  }
+
+  .ida-events-cta-card {
+    padding: 30px 20px;
+    border-radius: 28px;
+  }
+
+  .ida-events-cta-card::before {
+    left: -10px;
+    bottom: 48px;
+    width: 170px;
+    height: 112px;
+    opacity: 0.62;
+  }
+
+  .ida-events-cta-card::after {
+    top: 14px;
+    right: -36px;
+    width: 184px;
+    height: 116px;
+  }
+
+  .ida-events-cta-orb--left {
+    width: 270px;
+    height: 136px;
+    bottom: -78px;
+  }
+
+  .ida-events-cta-actions,
+  .ida-events-cta-button {
+    width: 100%;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+body.ida-contact-page-active {
+  background: #f6f6f7;
+  overflow-x: hidden;
+}
+
+[data-ida-contact-page] {
+  position: relative;
+  z-index: 1;
+  background: #f6f6f7;
+}
+
+.ida-contact-shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 clamp(28px, 3vw, 44px);
+}
+
+.ida-contact-hero {
+  position: relative;
+  background: #ffffff;
+}
+
+.ida-contact-hero-banner {
+  position: relative;
+  overflow: hidden;
+  height: clamp(290px, 28vw, 380px);
+  border-top: 2px solid rgba(15, 24, 38, 0.78);
+}
+
+.ida-contact-hero-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(24, 20, 16, 0.08) 0%, rgba(24, 20, 16, 0.24) 100%);
+}
+
+.ida-contact-hero-banner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 48%;
+}
+
+.ida-contact-hero-card {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(calc(100% - 40px), 500px);
+  padding: 20px 28px 18px;
+  border-radius: 28px 28px 0 0;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 18px 36px rgba(43, 52, 68, 0.16);
+  text-align: center;
+  z-index: 2;
+}
+
+.ida-contact-hero-title {
+  margin: 0;
+  color: #f16034;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.ida-contact-breadcrumb {
+  margin: 10px 0 0;
+  color: #98989a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.25vw, 1.28rem);
+  line-height: 1.3;
+}
+
+.ida-contact-content-section {
+  padding: 32px 0 96px;
+  background: #f6f6f7;
+}
+
+.ida-contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  align-items: start;
+}
+
+.ida-contact-copy-column {
+  display: grid;
+  gap: 28px;
+}
+
+.ida-contact-section-heading {
+  display: grid;
+  gap: 14px;
+}
+
+.ida-contact-section-title {
+  margin: 0;
+  color: #6989b6;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.ida-contact-section-accent {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ida-contact-section-accent-line {
+  display: block;
+  height: 4px;
+  border-radius: 999px;
+}
+
+.ida-contact-section-accent-line--primary {
+  width: 248px;
+  max-width: 100%;
+  background: #f16034;
+}
+
+.ida-contact-section-accent-line--secondary {
+  width: 28px;
+  background: #6c9fcb;
+}
+
+.ida-contact-form {
+  display: grid;
+  gap: 22px;
+}
+
+.ida-contact-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 26px;
+}
+
+.ida-contact-field {
+  position: relative;
+  display: block;
+}
+
+.ida-contact-field input,
+.ida-contact-field select,
+.ida-contact-field textarea {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: #6680a8;
+  font-size: 1.08rem;
+  box-shadow: 0 10px 24px rgba(115, 150, 189, 0.12);
+}
+
+.ida-contact-field input,
+.ida-contact-field select {
+  height: 62px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: #cfe0ef;
+}
+
+.ida-contact-field input::placeholder,
+.ida-contact-field textarea::placeholder {
+  color: #7e93ac;
+}
+
+.ida-contact-field select {
+  appearance: none;
+  cursor: pointer;
+  color: #7e93ac;
+}
+
+.ida-contact-field--select::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #6989b6;
+  border-bottom: 2px solid #6989b6;
+  transform: translateY(-60%) rotate(45deg);
+  pointer-events: none;
+}
+
+.ida-contact-field textarea {
+  min-height: 164px;
+  padding: 22px 24px;
+  border-radius: 34px;
+  resize: vertical;
+  background: #cfe0ef;
+}
+
+.ida-contact-form-actions {
+  display: grid;
+  justify-items: end;
+  gap: 14px;
+}
+
+.ida-contact-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 176px;
+  min-height: 58px;
+  padding: 0 30px;
+  border: 0;
+  border-radius: 999px;
+  background: #0a919c;
+  color: #ffffff;
+  font-size: 1.08rem;
+  font-weight: 700;
+  box-shadow: 0 16px 28px rgba(121, 171, 217, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.ida-contact-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.ida-contact-submit:disabled {
+  opacity: 0.72;
+  cursor: wait;
+}
+
+.ida-contact-status {
+  margin: 0;
+  color: #51617c;
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+.ida-contact-status[data-state="success"] {
+  color: #0b8c75;
+}
+
+.ida-contact-status[data-state="error"] {
+  color: #d14b2a;
+}
+
+.ida-contact-details-section {
+  padding: 32px 0 32px;
+  background: #f6f6f7;
+}
+
+.ida-contact-details-card {
+  padding: clamp(28px, 3vw, 42px);
+  border-radius: 34px;
+  background: #ffffff;
+  box-shadow: 0 18px 36px rgba(39, 55, 81, 0.1);
+}
+
+.ida-contact-details-card .entry-content {
+  color: #42536f;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.ida-contact-details-card .entry-content h3 {
+  margin: 0 0 16px;
+  color: #6989b6;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 2vw, 2rem);
+  line-height: 1.15;
+}
+
+.ida-contact-details-card .entry-content p {
+  margin: 0 0 18px;
+}
+
+.ida-contact-details-card .entry-content ul {
+  margin: 0 0 22px;
+  padding-left: 22px;
+}
+
+.ida-contact-details-card .entry-content .ida-contact-email-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 34px;
+  align-items: start;
+}
+
+.ida-contact-details-card .entry-content .ida-contact-email-list li {
+  margin-top: 0;
+}
+
+.ida-contact-details-card .entry-content li + li {
+  margin-top: 8px;
+}
+
+.ida-contact-details-card .entry-content .ida-contact-email-list li + li {
+  margin-top: 0;
+}
+
+.ida-contact-details-card .entry-content a {
+  color: #6f99c8;
+}
+
+@media (max-width: 991px) {
+  .ida-contact-content-section {
+    padding-top: 24px;
+  }
+
+  .ida-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .ida-contact-details-section {
+    padding-top: 120px;
+    padding-bottom: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ida-contact-hero-card {
+    bottom: -48px;
+    width: min(calc(100% - 28px), 420px);
+    padding: 18px 18px 16px;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .ida-contact-content-section {
+    padding: 20px 0 64px;
+  }
+
+  .ida-contact-section-title {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .ida-contact-section-accent-line--primary {
+    width: 188px;
+  }
+
+  .ida-contact-form-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .ida-contact-field input,
+  .ida-contact-field select {
+    height: 58px;
+    padding: 0 20px;
+  }
+
+  .ida-contact-field textarea {
+    min-height: 148px;
+    padding: 18px 20px;
+  }
+
+  .ida-contact-submit {
+    width: 100%;
+  }
+
+  .ida-contact-details-section {
+    padding-top: 106px;
+    padding-bottom: 20px;
+  }
+
+  .ida-contact-details-card {
+    padding: 24px 20px;
+    border-radius: 26px;
+  }
+
+  .ida-contact-details-card .entry-content .ida-contact-email-list {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+body.ida-news-spotlight-page-active {
+  background: #f3f4f7;
+  overflow-x: hidden;
+}
+
+[data-ida-news-spotlight-page] {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+}
+
+.ida-news-shell {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(28px, 3.2vw, 46px);
+}
+
+.ida-news-hero {
+  position: relative;
+  background: #ffffff;
+}
+
+.ida-news-hero-banner {
+  position: relative;
+  overflow: hidden;
+  height: clamp(300px, 31vw, 420px);
+  border-top: 2px solid rgba(15, 24, 38, 0.78);
+  border-bottom: 1px solid rgba(15, 24, 38, 0.16);
+}
+
+.ida-news-hero-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 14, 24, 0.06) 0%, rgba(9, 14, 24, 0.22) 58%, rgba(9, 14, 24, 0.36) 100%);
+}
+
+.ida-news-hero-banner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 50%;
+}
+
+.ida-news-hero-card {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: min(calc(100% - 48px), 640px);
+  padding: 18px 34px 14px;
+  border-radius: 32px 32px 0 0;
+  border: 1px solid rgba(133, 155, 182, 0.2);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 20px 34px rgba(42, 55, 77, 0.14);
+  text-align: center;
+  z-index: 2;
+}
+
+.ida-news-hero-title,
+.ida-news-featured-title,
+.ida-news-sidebar-title {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.ida-news-hero-title {
+  margin: 0;
+  color: #ff5528;
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 0.98;
+}
+
+.ida-news-breadcrumb {
+  margin: 6px 0 0;
+  color: #808a9a;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.ida-news-content-section {
+  padding: 48px 0 80px;
+  background: #f1f1f1;
+}
+
+.ida-news-search-row {
+  width: 100%;
+  margin: 0;
+  padding: 31px 20px 26px;
+  border-radius: 16px;
+  background: #ff5a2c;
+}
+
+.ida-news-search-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 8px 0 18px;
+  border: 1.5px solid #8f8f8f;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.ida-news-search-field {
+  display: flex;
+}
+
+.ida-news-search-field input {
+  width: 100%;
+  min-height: 42px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #696969;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.ida-news-search-field input::placeholder {
+  color: #8d8d8d;
+}
+
+.ida-news-search-button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ff5a2c;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 180ms ease;
+}
+
+.ida-news-search-button svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.ida-news-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.72fr) minmax(280px, 0.74fr);
+  gap: 58px;
+  align-items: start;
+}
+
+.ida-news-main-column {
+  display: grid;
+  gap: 42px;
+}
+
+.ida-news-sidebar {
+  display: grid;
+  gap: 18px;
+  position: sticky;
+  top: 28px;
+  align-self: start;
+}
+
+.ida-news-featured-card,
+.ida-news-sidebar-card {
+  background: transparent;
+  box-shadow: none;
+}
+
+.ida-news-featured-card {
+  overflow: hidden;
+  border: 1.5px solid #3f3f3f;
+  border-radius: 18px;
+}
+
+.ida-news-featured-media {
+  margin: 0;
+  border-bottom: 1.5px solid #3f3f3f;
+}
+
+.ida-news-featured-media img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 1.68 / 0.85;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.ida-news-featured-body {
+  display: grid;
+  gap: 14px;
+  padding: 18px 22px 18px;
+}
+
+.ida-news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: center;
+  color: #7e7e7e;
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+
+.ida-news-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ida-news-meta-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff5a2c;
+  flex: 0 0 auto;
+}
+
+.ida-news-meta-icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.ida-news-featured-title {
+  margin: 0;
+  color: #1f1f1f;
+  font-size: clamp(1.7rem, 1.7vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.18;
+}
+
+.ida-news-featured-excerpt {
+  margin: 0;
+  color: #5c5c5c;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.ida-news-read-more {
+  min-width: 142px;
+  min-height: 40px;
+  padding: 0 18px;
+  border: 1px solid #ff5a2c;
+  border-radius: 999px;
+  background: #ff5a2c;
+  color: #ffffff;
+  font-size: 0.97rem;
+  font-weight: 700;
+  justify-self: start;
+  transition: transform 180ms ease;
+}
+
+.ida-news-no-posts {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: #5d5d5d;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.ida-news-no-posts-line {
+  flex: 1 1 auto;
+  min-width: 40px;
+  height: 1.5px;
+  background: #676767;
+}
+
+.ida-news-no-posts-diamond {
+  width: 8px;
+  height: 8px;
+  background: #676767;
+  transform: rotate(45deg);
+  flex: 0 0 auto;
+  margin: 0 -1px;
+}
+
+.ida-news-no-posts-label {
+  flex: 0 0 auto;
+  padding: 0 24px;
+}
+
+.ida-news-sidebar-card {
+  padding: 20px 18px 20px;
+  border: 1.5px solid #e97549;
+  border-radius: 18px;
+}
+
+.ida-news-sidebar-title {
+  margin: 0 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 1.5px solid #8e8e8e;
+  color: #171717;
+  font-size: clamp(1.7rem, 2vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.ida-news-category-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.ida-news-category-button {
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 14px 9px 16px;
+  border: 1.5px solid #7e7e7e;
+  border-radius: 999px;
+  background: transparent;
+  color: #5c5c5c;
+  font-size: 0.94rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: transform 180ms ease, color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.ida-news-category-label {
+  flex: 1 1 auto;
+}
+
+.ida-news-category-arrow {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.ida-news-category-arrow svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.ida-news-category-button.is-active {
+  border-color: #ff5a2c;
+  background: #ff5a2c;
+  color: #ffffff;
+}
+
+.ida-news-search-button:hover,
+.ida-news-search-button:focus-visible,
+.ida-news-read-more:hover,
+.ida-news-read-more:focus-visible,
+.ida-news-category-button:hover,
+.ida-news-category-button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.ida-news-search-button:focus-visible,
+.ida-news-read-more:focus-visible,
+.ida-news-category-button:focus-visible,
+.ida-news-search-field input:focus-visible {
+  outline: 3px solid rgba(19, 133, 149, 0.2);
+  outline-offset: 2px;
+}
+
+.ida-news-category-button:hover,
+.ida-news-category-button:focus-visible {
+  color: #ff5a2c;
+}
+
+.ida-news-category-button.is-active:hover,
+.ida-news-category-button.is-active:focus-visible {
+  color: #ffffff;
+}
+
+@media (max-width: 991px) {
+  .ida-news-shell {
+    padding: 0 24px;
+  }
+
+  .ida-news-hero-card {
+    width: min(calc(100% - 32px), 560px);
+    padding: 18px 28px 14px;
+    bottom: 18px;
+  }
+
+  .ida-news-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .ida-news-main-column {
+    gap: 32px;
+  }
+
+  .ida-news-sidebar {
+    position: static;
+    top: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .ida-news-shell {
+    padding: 0 16px;
+  }
+
+  .ida-news-hero-banner {
+    height: 260px;
+  }
+
+  .ida-news-hero-card {
+    width: min(calc(100% - 20px), 400px);
+    padding: 16px 18px 12px;
+    border-radius: 24px;
+    bottom: 14px;
+  }
+
+  .ida-news-breadcrumb {
+    font-size: 0.84rem;
+  }
+
+  .ida-news-content-section {
+    padding-top: 30px;
+    padding-bottom: 64px;
+  }
+
+  .ida-news-search-row {
+    padding: 22px 16px 18px;
+  }
+
+  .ida-news-search-shell {
+    min-height: 42px;
+    padding-left: 14px;
+  }
+
+  .ida-news-featured-card {
+    border-radius: 16px;
+  }
+
+  .ida-news-featured-body {
+    gap: 12px;
+    padding: 16px 16px 18px;
+  }
+
+  .ida-news-meta {
+    gap: 8px 12px;
+    font-size: 0.72rem;
+  }
+
+  .ida-news-featured-title {
+    font-size: 1.45rem;
+  }
+
+  .ida-news-featured-excerpt {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .ida-news-read-more {
+    min-width: 134px;
+    min-height: 38px;
+    font-size: 0.94rem;
+  }
+
+  .ida-news-sidebar-card {
+    padding: 18px 16px 18px;
+    border-radius: 16px;
+  }
+
+  .ida-news-sidebar-title {
+    margin-bottom: 16px;
+    font-size: 1.45rem;
+  }
+
+  .ida-news-category-button {
+    min-height: 40px;
+    padding: 8px 12px 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  .ida-news-no-posts {
+    font-size: 0.88rem;
+  }
+
+  .ida-news-no-posts-line {
+    min-width: 0;
+  }
+
+  .ida-news-no-posts-label {
+    padding: 0 14px;
+  }
+}
+
+[data-ida-homepage-sections] > section.ida-route-reveal-target,
+[data-ida-membership-page] > section.ida-route-reveal-target,
+[data-ida-global-network-application-page] > section.ida-route-reveal-target,
+[data-ida-directory-page] > section.ida-route-reveal-target,
+[data-ida-events-page] > section.ida-route-reveal-target,
+[data-ida-collaborative-projects-page] > section.ida-route-reveal-target,
+[data-ida-project-idea-page] > section.ida-route-reveal-target,
+[data-ida-news-spotlight-page] > section.ida-route-reveal-target,
+[data-ida-contact-page] > section.ida-route-reveal-target {
+  opacity: 0;
+  transform: translate3d(0, 36px, 0);
+  transition:
+    opacity 620ms ease,
+    transform 620ms cubic-bezier(0.22, 0.7, 0.2, 1);
+  transition-delay: var(--ida-route-reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-ida-homepage-sections] > section.ida-route-reveal-target.is-visible,
+[data-ida-membership-page] > section.ida-route-reveal-target.is-visible,
+[data-ida-global-network-application-page] > section.ida-route-reveal-target.is-visible,
+[data-ida-directory-page] > section.ida-route-reveal-target.is-visible,
+[data-ida-events-page] > section.ida-route-reveal-target.is-visible,
+[data-ida-collaborative-projects-page] > section.ida-route-reveal-target.is-visible,
+[data-ida-project-idea-page] > section.ida-route-reveal-target.is-visible,
+[data-ida-news-spotlight-page] > section.ida-route-reveal-target.is-visible,
+[data-ida-contact-page] > section.ida-route-reveal-target.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.ida-route-hover-control {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.ida-route-hover-control[data-ida-hover-mode="filled"]:hover,
+.ida-route-hover-control[data-ida-hover-mode="filled"]:focus-visible {
+  background-color: transparent !important;
+  color: var(--ida-route-hover-text, currentColor) !important;
+  border-color: transparent !important;
+  box-shadow: inset 0 0 0 2px var(--ida-route-hover-border, currentColor) !important;
+}
+
+.ida-route-hover-control[data-ida-hover-mode="outlined"]:hover,
+.ida-route-hover-control[data-ida-hover-mode="outlined"]:focus-visible {
+  background-color: var(--ida-route-hover-background, currentColor) !important;
+  color: var(--ida-route-hover-text, #ffffff) !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-ida-homepage-sections] > section.ida-route-reveal-target,
+  [data-ida-membership-page] > section.ida-route-reveal-target,
+  [data-ida-global-network-application-page] > section.ida-route-reveal-target,
+  [data-ida-directory-page] > section.ida-route-reveal-target,
+  [data-ida-events-page] > section.ida-route-reveal-target,
+  [data-ida-collaborative-projects-page] > section.ida-route-reveal-target,
+  [data-ida-project-idea-page] > section.ida-route-reveal-target,
+  [data-ida-news-spotlight-page] > section.ida-route-reveal-target,
+  [data-ida-contact-page] > section.ida-route-reveal-target {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

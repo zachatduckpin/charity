@@ -97,6 +97,8 @@
   const CONTACT_PAGE_HREF = "/contact";
   const LOGIN_PAGE_HREF = "/login";
   const GLOBAL_NETWORK_APPLICATION_HERO_IMAGE_SRC = "/assets/membership-connect.png";
+  const GLOBAL_NETWORK_APPLICATION_API_ENDPOINT = "/api/membership/application";
+  const GLOBAL_NETWORK_APPLICATION_DRAFT_STORAGE_KEY = "ida-global-network-application-draft";
   const DIRECTORY_HERO_IMAGE_SRC = "/assets/directory/GN_People.jpg";
   const EVENTS_HERO_IMAGE_SRC = "/assets/events-hero.jpg";
   const COLLABORATIVE_PROJECTS_HERO_IMAGE_SRC = "/assets/collaborative-projects/hero.jpg";
@@ -259,7 +261,17 @@
       lottiePath: "/assets/ida-home/lottie/benefits-positioning.json",
     },
   ];
-  const DIRECTORY_MEMBERS = [
+  const DIRECTORY_MEMBERS_API_ENDPOINT = "/backend/api/directory/members";
+  const DIRECTORY_MEMBER_ID_ALIASES = {
+    "bellavista-school": "bellavista",
+    "center-for-child-evaluation-and-teaching-kuwait": "ccet",
+    "dr-anjali-morris-education-health-foundation": "dr-anjali-morris-foundation",
+    "dyslexia-and-social-support-services-botswana": "dyslexia-social-support-botswana",
+    "dyslexia-association-of-singapore": "singapore",
+    "dyslexia-foundation": "uk",
+    "pathways-foundation-ltd": "pathways-foundation",
+  };
+  const DIRECTORY_MEMBERS_FALLBACK = [
     {
       id: "africa-dyslexia-organization",
       name: "Africa Dyslexia Organization (ADO)",
@@ -2574,7 +2586,7 @@
               <p class="ida-gn-application-kicker">Multi-step application preview</p>
               <h2 class="ida-gn-application-intro-title">A guided application flow styled to match the IDA Global Network website</h2>
               <p class="ida-gn-application-intro-copy">
-                This is a front-end version of the Global Network application. It follows the same structure as the working GN application prototype, but for now it runs without validation, saving, or backend submission.
+                Complete the Global Network application, save a draft in your browser for later, and submit the final package to the IDA backend for review.
               </p>
             </div>
           </div>
@@ -2601,7 +2613,7 @@
                   <div class="ida-gn-application-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="17" data-ida-application-progress-bar>
                     <span style="width: 17%"></span>
                   </div>
-                  <p class="ida-gn-application-progress-help">The step flow is active now. Validation, draft saving, and backend submission will be connected later.</p>
+                  <p class="ida-gn-application-progress-help">Each step validates before you move forward. Draft values are saved in this browser, and final submissions are sent to the backend.</p>
                 </div>
 
                 <section class="ida-gn-application-panel ida-gn-application-panel--welcome is-active" data-ida-application-panel="0">
@@ -2805,23 +2817,23 @@
                     <h4 class="ida-gn-application-upload-heading">Required and supporting files</h4>
                     <label class="ida-gn-application-document">
                       <span><strong>NGO/non-profit/charity status</strong><span class="ida-gn-application-help">Required if the organization has formal status. Multiple files allowed.</span></span>
-                      <input class="ida-gn-application-input" type="file" name="documents_nonprofit_status" multiple>
+                      <input class="ida-gn-application-input" type="file" name="documents_nonprofit_status[]" multiple>
                     </label>
                     <label class="ida-gn-application-document">
                       <span><strong>Formal bylaws</strong><span class="ida-gn-application-help">Required if the association has bylaws. Multiple files allowed.</span></span>
-                      <input class="ida-gn-application-input" type="file" name="documents_bylaws" multiple>
+                      <input class="ida-gn-application-input" type="file" name="documents_bylaws[]" multiple>
                     </label>
                     <label class="ida-gn-application-document">
                       <span><strong>Annual operating or financial report</strong><span class="ida-gn-application-help">Recommended if available. Multiple files allowed.</span></span>
-                      <input class="ida-gn-application-input" type="file" name="documents_annual_report" multiple>
+                      <input class="ida-gn-application-input" type="file" name="documents_annual_report[]" multiple>
                     </label>
                     <label class="ida-gn-application-document">
                       <span><strong>Promotional or recruitment material sample</strong><span class="ida-gn-application-help">Required if recruitment material is produced. Multiple files allowed.</span></span>
-                      <input class="ida-gn-application-input" type="file" name="documents_recruitment_material" multiple>
+                      <input class="ida-gn-application-input" type="file" name="documents_recruitment_material[]" multiple>
                     </label>
                     <label class="ida-gn-application-document">
                       <span><strong>Additional context pages</strong><span class="ida-gn-application-help">Mission, definition, instructional approaches, or other supporting information.</span></span>
-                      <input class="ida-gn-application-input" type="file" name="documents_additional_context" multiple>
+                      <input class="ida-gn-application-input" type="file" name="documents_additional_context[]" multiple>
                     </label>
 
                     <h4 class="ida-gn-application-upload-heading">Photos and images</h4>
@@ -2847,11 +2859,11 @@
                     </label>
                     <label class="ida-gn-application-document">
                       <span><strong>Additional activity photos</strong><span class="ida-gn-application-help">Optional examples of activities, schools, events, training, or community work.</span></span>
-                      <input class="ida-gn-application-input" type="file" name="photo_activity_examples" accept="image/*" multiple>
+                      <input class="ida-gn-application-input" type="file" name="photo_activity_examples[]" accept="image/*" multiple>
                     </label>
                     <label class="ida-gn-application-document">
                       <span><strong>Add additional files</strong><span class="ida-gn-application-help">Optional. Upload any other relevant files that do not fit the categories above.</span></span>
-                      <input class="ida-gn-application-input" type="file" name="documents_additional_files" multiple>
+                      <input class="ida-gn-application-input" type="file" name="documents_additional_files[]" multiple>
                     </label>
                   </div>
                 </section>
@@ -2870,8 +2882,8 @@
                     </label>
                   </div>
                   <div class="ida-gn-application-preview-note">
-                    <strong>Front-end preview only.</strong>
-                    <span>Submission, draft saving, and validation are intentionally not connected yet.</span>
+                    <strong>Final review step.</strong>
+                    <span>Submitting here sends your application package to the backend for IDA review.</span>
                   </div>
                 </section>
 
@@ -3026,6 +3038,154 @@
       </div>`;
   }
 
+  let directoryMembers = DIRECTORY_MEMBERS_FALLBACK.map((member) => ({ ...member }));
+  let directoryMembersLoaded = false;
+  let directoryMembersRequest = null;
+
+  function getDirectoryMembers() {
+    return directoryMembers;
+  }
+
+  function getDirectoryFallbackId(memberId) {
+    return DIRECTORY_MEMBER_ID_ALIASES[memberId] || memberId;
+  }
+
+  function getDirectoryValue(primaryValue, fallbackValue) {
+    if (Array.isArray(primaryValue)) {
+      return primaryValue.length ? primaryValue : (Array.isArray(fallbackValue) ? fallbackValue : []);
+    }
+
+    if (primaryValue === null || primaryValue === undefined) {
+      return fallbackValue;
+    }
+
+    if (typeof primaryValue === "string") {
+      return primaryValue.trim() ? primaryValue : fallbackValue;
+    }
+
+    return primaryValue;
+  }
+
+  function normalizeDirectoryMember(member) {
+    return {
+      ...member,
+      id: String(member?.id || "").trim(),
+      name: String(member?.name || "").trim(),
+      cardTitle: String(member?.cardTitle || "").trim(),
+      location: String(member?.location || "").trim(),
+      tier: String(member?.tier || "").trim(),
+      detailTier: String(member?.detailTier || "").trim(),
+      image: String(member?.image || "").trim(),
+      address: String(member?.address || "").trim(),
+      description: String(member?.description || "").trim(),
+      phone: String(member?.phone || "").trim(),
+      email: String(member?.email || "").trim(),
+      website: String(member?.website || "").trim(),
+      websiteUrl: String(member?.websiteUrl || "").trim(),
+      regionCode: String(member?.regionCode || "").trim(),
+      socialLinks: Array.isArray(member?.socialLinks)
+        ? member.socialLinks.filter((item) => item && item.platform && item.url)
+        : [],
+    };
+  }
+
+  function mergeDirectoryMember(fallbackMember, apiMember) {
+    const merged = normalizeDirectoryMember({
+      ...(fallbackMember || {}),
+      ...(apiMember || {}),
+      id: fallbackMember?.id || apiMember?.id || "",
+      name: getDirectoryValue(apiMember?.name, fallbackMember?.name) || "",
+      cardTitle: getDirectoryValue(apiMember?.cardTitle, fallbackMember?.cardTitle) || "",
+      location: getDirectoryValue(apiMember?.location, fallbackMember?.location) || "",
+      tier: getDirectoryValue(apiMember?.tier, fallbackMember?.tier) || "",
+      detailTier: getDirectoryValue(apiMember?.detailTier, fallbackMember?.detailTier) || "",
+      image: getDirectoryValue(apiMember?.image, fallbackMember?.image) || "",
+      address: getDirectoryValue(apiMember?.address, fallbackMember?.address) || "",
+      description: getDirectoryValue(apiMember?.description, fallbackMember?.description) || "",
+      phone: getDirectoryValue(apiMember?.phone, fallbackMember?.phone) || "",
+      email: getDirectoryValue(apiMember?.email, fallbackMember?.email) || "",
+      website: getDirectoryValue(apiMember?.website, fallbackMember?.website) || "",
+      websiteUrl: getDirectoryValue(apiMember?.websiteUrl, fallbackMember?.websiteUrl) || "",
+      socialLinks: getDirectoryValue(apiMember?.socialLinks, fallbackMember?.socialLinks) || [],
+      regionCode: getDirectoryValue(apiMember?.regionCode, fallbackMember?.regionCode) || "",
+      lat: Number.isFinite(apiMember?.lat) ? apiMember.lat : fallbackMember?.lat,
+      lng: Number.isFinite(apiMember?.lng) ? apiMember.lng : fallbackMember?.lng,
+      mapZoom: Number.isFinite(apiMember?.mapZoom) ? apiMember.mapZoom : fallbackMember?.mapZoom,
+      highlightRadius: Number.isFinite(apiMember?.highlightRadius) ? apiMember.highlightRadius : fallbackMember?.highlightRadius,
+    });
+
+    if (!merged.name) {
+      merged.name = fallbackMember?.name || apiMember?.name || merged.id;
+    }
+
+    return merged;
+  }
+
+  function mergeDirectoryMembers(apiMembers) {
+    const normalizedApiMembers = Array.isArray(apiMembers)
+      ? apiMembers.map(normalizeDirectoryMember).filter((member) => member.id && member.name)
+      : [];
+
+    if (!normalizedApiMembers.length) {
+      return DIRECTORY_MEMBERS_FALLBACK.map((member) => ({ ...member }));
+    }
+
+    const fallbackMembersById = new Map(
+      DIRECTORY_MEMBERS_FALLBACK.map((member) => [member.id, normalizeDirectoryMember(member)])
+    );
+    const mergedMembers = normalizedApiMembers.map((member) => {
+      const fallbackId = getDirectoryFallbackId(member.id);
+      const fallbackMember = fallbackMembersById.get(fallbackId);
+
+      return mergeDirectoryMember(fallbackMember, member);
+    });
+
+    return mergedMembers;
+  }
+
+  async function ensureDirectoryMembersLoaded() {
+    if (directoryMembersLoaded) {
+      return directoryMembers;
+    }
+
+    if (directoryMembersRequest) {
+      return directoryMembersRequest;
+    }
+
+    directoryMembersRequest = fetch(DIRECTORY_MEMBERS_API_ENDPOINT, {
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Directory request failed with status ${response.status}`);
+        }
+
+        return response.json();
+      })
+      .then((payload) => {
+        const members = Array.isArray(payload?.response?.members)
+          ? payload.response.members
+          : Array.isArray(payload?.members)
+            ? payload.members
+            : [];
+
+        if (members.length) {
+          directoryMembers = mergeDirectoryMembers(members);
+          directoryMembersLoaded = true;
+        }
+
+        return directoryMembers;
+      })
+      .catch(() => directoryMembers)
+      .finally(() => {
+        directoryMembersRequest = null;
+      });
+
+    return directoryMembersRequest;
+  }
+
   function getDirectoryShareIconMarkup(platform) {
     if (platform === "facebook") {
       return `
@@ -3100,7 +3260,7 @@
   }
 
   function getDirectoryCardMembers() {
-    return DIRECTORY_MEMBERS
+    return getDirectoryMembers()
       .filter((member) => !isAssociateDirectoryMember(member))
       .sort((firstMember, secondMember) => getDirectoryTierPriority(firstMember) - getDirectoryTierPriority(secondMember));
   }
@@ -5535,21 +5695,480 @@
     const progressPercent = form ? form.querySelector("[data-ida-application-progress-percent]") : null;
     const progressBar = form ? form.querySelector("[data-ida-application-progress-bar]") : null;
     const progressFill = progressBar ? progressBar.querySelector("span") : null;
+    const stepValidationMessage = "Please complete the required fields in this step before continuing.";
     let current = 0;
 
     if (!form || !panels.length || !previous || !next || !submit || !draft) {
       return;
     }
 
-    function setStatus(message = "") {
+    function setStatus(message = "", state = "") {
       if (status) {
         status.textContent = message;
+        status.dataset.state = state;
+        status.style.color = state === "error" ? "#b42318" : state === "success" ? "#027a48" : "";
       }
     }
 
     function scrollFormIntoView() {
       const targetTop = Math.max(form.getBoundingClientRect().top + window.scrollY - 120, 0);
       window.scrollTo({ top: targetTop, behavior: "smooth" });
+    }
+
+    function setNavigationDisabled(isDisabled) {
+      [previous, next, draft, submit, ...steps].forEach((button) => {
+        button.disabled = isDisabled;
+      });
+    }
+
+    function getFieldsByName(name) {
+      return Array.from(form.querySelectorAll(`[name="${name}"]`));
+    }
+
+    function getField(name) {
+      return getFieldsByName(name)[0] || null;
+    }
+
+    function getTrimmedValue(name) {
+      const field = getField(name);
+      return field ? String(field.value || "").trim() : "";
+    }
+
+    function getRadioValue(name) {
+      const fields = getFieldsByName(name);
+      const checked = fields.find((field) => field.checked);
+      return checked ? checked.value : "";
+    }
+
+    function hasFiles(name) {
+      const field = getField(name);
+      return Boolean(field && field.files && field.files.length);
+    }
+
+    function clearFieldValidity(name) {
+      getFieldsByName(name).forEach((field) => field.setCustomValidity(""));
+    }
+
+    function failField(target, message) {
+      const field = typeof target === "string" ? getField(target) : target;
+
+      if (!field) {
+        return false;
+      }
+
+      field.setCustomValidity(message);
+
+      if (typeof field.reportValidity === "function") {
+        field.reportValidity();
+      }
+
+      field.setCustomValidity("");
+
+      if (typeof field.focus === "function") {
+        field.focus({ preventScroll: true });
+      }
+
+      return false;
+    }
+
+    function validateRequiredText(name, message) {
+      clearFieldValidity(name);
+
+      if (!getTrimmedValue(name)) {
+        return failField(name, message);
+      }
+
+      return true;
+    }
+
+    function validateRequiredEmail(name, message) {
+      clearFieldValidity(name);
+      const field = getField(name);
+      const value = getTrimmedValue(name);
+
+      if (!field || !value) {
+        return failField(name, message);
+      }
+
+      if (field.validity && field.validity.typeMismatch) {
+        return failField(field, "Please enter a valid email address.");
+      }
+
+      return true;
+    }
+
+    function validateOptionalEmail(name) {
+      clearFieldValidity(name);
+      const field = getField(name);
+      const value = getTrimmedValue(name);
+
+      if (!field || !value) {
+        return true;
+      }
+
+      if (field.validity && field.validity.typeMismatch) {
+        return failField(field, "Please enter a valid email address.");
+      }
+
+      return true;
+    }
+
+    function validateOptionalUrl(name) {
+      clearFieldValidity(name);
+      const field = getField(name);
+      const value = getTrimmedValue(name);
+
+      if (!field || !value) {
+        return true;
+      }
+
+      if (field.validity && field.validity.typeMismatch) {
+        return failField(field, "Please enter a valid website URL.");
+      }
+
+      return true;
+    }
+
+    function validateRequiredNumber(name, message, minimum = 0) {
+      clearFieldValidity(name);
+      const field = getField(name);
+      const value = getTrimmedValue(name);
+
+      if (!field || value === "") {
+        return failField(name, message);
+      }
+
+      if (Number.isNaN(Number(value)) || Number(value) < minimum) {
+        return failField(field, `Please enter a value of ${minimum} or greater.`);
+      }
+
+      return true;
+    }
+
+    function validateRadioRequired(name, message) {
+      clearFieldValidity(name);
+      const fields = getFieldsByName(name);
+
+      if (!fields.length) {
+        return true;
+      }
+
+      if (!fields.some((field) => field.checked)) {
+        return failField(fields[0], message);
+      }
+
+      return true;
+    }
+
+    function validateRequiredFile(name, message) {
+      clearFieldValidity(name);
+
+      if (!hasFiles(name)) {
+        return failField(name, message);
+      }
+
+      return true;
+    }
+
+    function validateCurrentStep(stepIndex) {
+      if (stepIndex === 0) {
+        return true;
+      }
+
+      if (stepIndex === 1) {
+        return (
+          validateRequiredText("organization_name", "Please enter the organization name.")
+          && validateRequiredText("contact_name", "Please enter the contact name.")
+          && validateRequiredText("contact_position", "Please enter the contact position.")
+          && validateRequiredText("primary_contact_name", "Please enter the primary contact name.")
+          && validateRequiredText("address", "Please enter the organization address.")
+          && validateRequiredText("country", "Please select the country.")
+          && (countrySelect && countrySelect.value === "Other"
+            ? validateRequiredText("country_other", "Please specify the country.")
+            : true)
+          && validateRequiredText("telephone", "Please enter the telephone number.")
+          && validateRequiredEmail("email", "Please enter the general email address.")
+          && validateRequiredEmail("primary_contact_email", "Please enter the primary contact email.")
+          && validateOptionalEmail("secondary_contact_email")
+          && validateOptionalUrl("website_url")
+        );
+      }
+
+      if (stepIndex === 2) {
+        return (
+          validateRequiredNumber("year_established", "Please enter the year established.", 1800)
+          && validateRequiredText("organization_structure_type", "Please select the organization structure type.")
+          && validateRequiredText("governance_structure", "Please describe the governance structure.")
+          && validateRadioRequired("has_nonprofit_status", "Please choose whether the organization has nonprofit status.")
+          && validateRadioRequired("has_formal_bylaws", "Please choose whether the organization has formal bylaws.")
+          && validateRadioRequired("has_annual_report", "Please choose whether the organization has an annual report.")
+          && validateRadioRequired("receives_government_funding", "Please choose whether the organization receives government funding.")
+          && validateRadioRequired("is_ida_member", "Please choose whether the organization is an IDA member.")
+        );
+      }
+
+      if (stepIndex === 3) {
+        return (
+          validateRadioRequired("is_membership_organization", "Please choose whether this is a membership organization.")
+          && validateRadioRequired("has_recruitment_material", "Please choose whether recruitment material is produced.")
+          && validateRadioRequired("supports_branches_or_chapters", "Please choose whether branches or chapters are supported.")
+          && (getRadioValue("is_membership_organization") === "yes"
+            ? validateRequiredNumber("current_member_count", "Please enter the current member count.", 0)
+              && validateRequiredText("membership_categories", "Please describe the membership categories.")
+            : true)
+          && (getRadioValue("supports_branches_or_chapters") === "yes"
+            ? validateRequiredText("branches_or_chapters_details", "Please describe the branches or chapters.")
+            : true)
+        );
+      }
+
+      if (stepIndex === 4) {
+        return (
+          validateRequiredText("mission", "Please describe the organization mission.")
+          && validateRadioRequired("offers_public_activities", "Please choose whether the organization offers public activities.")
+          && validateRadioRequired("has_annual_conference", "Please choose whether the organization has an annual conference.")
+          && (getRadioValue("offers_public_activities") === "yes"
+            ? validateRequiredText("public_activities_details", "Please describe the public activities.")
+            : true)
+          && validateRequiredText("country_dyslexia_definition", "Please describe the country definition of dyslexia.")
+          && validateRadioRequired("supports_country_definition", "Please choose whether the organization supports that definition.")
+          && validateRequiredText("instructional_approaches_country", "Please describe the instructional approaches used in the country.")
+          && validateRequiredText("remediation_programs_country", "Please describe the remediation programs used in the country.")
+          && validateRadioRequired("supports_instructional_approaches", "Please choose whether the organization supports these approaches.")
+          && (getRadioValue("supports_instructional_approaches") === "yes"
+            ? validateRequiredText("advocated_approaches_programs", "Please describe the approaches or programs your organization advocates.")
+            : true)
+        );
+      }
+
+      if (stepIndex === 5) {
+        return (
+          (getRadioValue("has_nonprofit_status") === "yes"
+            ? validateRequiredFile("documents_nonprofit_status[]", "Please upload the nonprofit status files.")
+            : true)
+          && (getRadioValue("has_formal_bylaws") === "yes"
+            ? validateRequiredFile("documents_bylaws[]", "Please upload the formal bylaws files.")
+            : true)
+          && (getRadioValue("has_annual_report") === "yes"
+            ? validateRequiredFile("documents_annual_report[]", "Please upload the annual report files.")
+            : true)
+          && (getRadioValue("has_recruitment_material") === "yes"
+            ? validateRequiredFile("documents_recruitment_material[]", "Please upload the recruitment material files.")
+            : true)
+          && validateRequiredFile("photo_applicant_contact", "Please upload the applicant photo.")
+          && validateRequiredFile("photo_primary_contact", "Please upload the primary contact photo.")
+          && validateRequiredFile("photo_organization", "Please upload the organization photo.")
+        );
+      }
+
+      if (stepIndex === 6) {
+        return validateRequiredText("signature_name", "Please type the signature name.");
+      }
+
+      return true;
+    }
+
+    function buildDraftSnapshot() {
+      const snapshot = {
+        current,
+        secondarySameEmail: Boolean(secondarySameEmail && secondarySameEmail.checked),
+        values: {},
+      };
+
+      Array.from(form.elements).forEach((element) => {
+        if (!element || !element.name || element.type === "file") {
+          return;
+        }
+
+        if (element.type === "radio") {
+          if (element.checked) {
+            snapshot.values[element.name] = element.value;
+          }
+          return;
+        }
+
+        snapshot.values[element.name] = element.value;
+      });
+
+      return snapshot;
+    }
+
+    function persistDraftLocally() {
+      try {
+        window.localStorage.setItem(
+          GLOBAL_NETWORK_APPLICATION_DRAFT_STORAGE_KEY,
+          JSON.stringify(buildDraftSnapshot())
+        );
+      } catch (error) {
+        // Ignore storage errors so the form remains usable.
+      }
+    }
+
+    function clearLocalDraft() {
+      try {
+        window.localStorage.removeItem(GLOBAL_NETWORK_APPLICATION_DRAFT_STORAGE_KEY);
+      } catch (error) {
+        // Ignore storage errors so the form remains usable.
+      }
+    }
+
+    function restoreDraftLocally() {
+      try {
+        const raw = window.localStorage.getItem(GLOBAL_NETWORK_APPLICATION_DRAFT_STORAGE_KEY);
+
+        if (!raw) {
+          return false;
+        }
+
+        const snapshot = JSON.parse(raw);
+
+        if (!snapshot || typeof snapshot !== "object" || !snapshot.values) {
+          return false;
+        }
+
+        Object.entries(snapshot.values).forEach(([name, value]) => {
+          const fields = getFieldsByName(name);
+
+          if (!fields.length) {
+            return;
+          }
+
+          if (fields[0].type === "radio") {
+            fields.forEach((field) => {
+              field.checked = field.value === value;
+            });
+            return;
+          }
+
+          fields[0].value = value;
+        });
+
+        if (secondarySameEmail) {
+          secondarySameEmail.checked = Boolean(snapshot.secondarySameEmail);
+        }
+
+        current = Number.isFinite(Number(snapshot.current)) ? Number(snapshot.current) : 0;
+
+        return true;
+      } catch (error) {
+        return false;
+      }
+    }
+
+    function extractErrorMessage(payload, fallbackMessage) {
+      if (payload && payload.errors && typeof payload.errors === "object") {
+        const messages = Object.values(payload.errors).find((value) => Array.isArray(value) && value.length);
+        if (messages) {
+          return messages[0];
+        }
+      }
+
+      if (payload && payload.message) {
+        return payload.message;
+      }
+
+      return fallbackMessage;
+    }
+
+    async function sendApplication(submissionStatus) {
+      const isDraft = submissionStatus === "draft";
+
+      if (!isDraft) {
+        for (let stepIndex = 1; stepIndex <= 6; stepIndex += 1) {
+          if (!validateCurrentStep(stepIndex)) {
+            showStep(stepIndex);
+            setStatus(stepValidationMessage, "error");
+            return;
+          }
+        }
+      }
+
+      const draftLabel = draft.textContent;
+      const submitLabel = submit.textContent;
+      setStatus(
+        isDraft ? "Saving draft..." : "Submitting application...",
+        ""
+      );
+
+      setNavigationDisabled(true);
+
+      if (isDraft) {
+        draft.textContent = "Saving draft...";
+      } else {
+        submit.textContent = "Submitting...";
+      }
+
+      const formData = new FormData(form);
+      formData.set("submission_status", submissionStatus);
+
+      try {
+        const response = await fetch(GLOBAL_NETWORK_APPLICATION_API_ENDPOINT, {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+          body: formData,
+        });
+
+        let payload = null;
+
+        try {
+          payload = await response.json();
+        } catch (error) {
+          payload = null;
+        }
+
+        if (!response.ok || !payload || payload.success !== true) {
+          throw new Error(
+            extractErrorMessage(
+              payload,
+              isDraft
+                ? "Unable to save the application draft right now."
+                : "Unable to submit the application right now."
+            )
+          );
+        }
+
+        const referenceSuffix = payload.response && payload.response.reference
+          ? ` Reference: ${payload.response.reference}.`
+          : "";
+
+        if (isDraft) {
+          persistDraftLocally();
+          setStatus(
+            `${payload.message || "Application draft saved successfully."}${referenceSuffix} Browser-restored drafts keep text selections, but file uploads need to be added again when you return.`,
+            "success"
+          );
+        } else {
+          clearLocalDraft();
+          form.reset();
+
+          if (secondarySameEmail) {
+            secondarySameEmail.checked = false;
+          }
+
+          syncCountryOther();
+          syncSecondaryEmail();
+          showStep(0);
+          setStatus(
+            `${payload.message || "Application submitted successfully."}${referenceSuffix}`,
+            "success"
+          );
+        }
+      } catch (error) {
+        setStatus(
+          error && error.message
+            ? error.message
+            : (isDraft
+              ? "Unable to save the application draft right now."
+              : "Unable to submit the application right now."),
+          "error"
+        );
+      } finally {
+        draft.textContent = draftLabel;
+        submit.textContent = submitLabel;
+        setNavigationDisabled(false);
+      }
     }
 
     function showStep(index) {
@@ -5590,6 +6209,7 @@
       }
 
       setStatus("");
+      persistDraftLocally();
       scrollFormIntoView();
     }
 
@@ -5607,21 +6227,38 @@
 
     steps.forEach((step) => {
       step.addEventListener("click", () => {
-        showStep(Number(step.dataset.idaApplicationStepTarget || 0));
+        const targetStep = Number(step.dataset.idaApplicationStepTarget || 0);
+
+        if (targetStep > current && current > 0 && !validateCurrentStep(current)) {
+          setStatus(stepValidationMessage, "error");
+          return;
+        }
+
+        showStep(targetStep);
       });
     });
 
     previous.addEventListener("click", () => showStep(current - 1));
-    next.addEventListener("click", () => showStep(current + 1));
+    next.addEventListener("click", () => {
+      if (current > 0 && !validateCurrentStep(current)) {
+        setStatus(stepValidationMessage, "error");
+        return;
+      }
+
+      showStep(current === 0 ? 1 : current + 1);
+    });
     draft.addEventListener("click", () => {
-      setStatus("Draft saving will be connected when the backend is added.");
+      sendApplication("draft");
     });
     submit.addEventListener("click", () => {
-      setStatus("Submission is not connected yet. This page is currently a front-end preview.");
+      sendApplication("submitted");
     });
 
     if (countrySelect) {
-      countrySelect.addEventListener("change", syncCountryOther);
+      countrySelect.addEventListener("change", () => {
+        syncCountryOther();
+        persistDraftLocally();
+      });
       syncCountryOther();
     }
 
@@ -5632,19 +6269,40 @@
         }
 
         syncSecondaryEmail();
+        persistDraftLocally();
       });
     }
 
     if (primaryEmail) {
-      primaryEmail.addEventListener("input", syncSecondaryEmail);
+      primaryEmail.addEventListener("input", () => {
+        syncSecondaryEmail();
+        persistDraftLocally();
+      });
     }
 
     if (secondaryEmail && secondarySameEmail) {
       secondaryEmail.readOnly = secondarySameEmail.checked;
     }
 
+    form.addEventListener("input", (event) => {
+      if (event.target && typeof event.target.setCustomValidity === "function") {
+        event.target.setCustomValidity("");
+      }
+
+      persistDraftLocally();
+    });
+
+    form.addEventListener("change", () => {
+      persistDraftLocally();
+    });
+
+    const restoredDraft = restoreDraftLocally();
     syncSecondaryEmail();
-    showStep(0);
+    showStep(restoredDraft ? current || 1 : 0);
+
+    if (restoredDraft) {
+      setStatus("Saved draft values were restored in this browser. File uploads need to be added again before final submission.", "success");
+    }
   }
 
   function hideGlobalNetworkApplicationOriginalContent() {
@@ -5980,8 +6638,8 @@
     const mapSection = page.querySelector("[data-ida-directory-map]");
     const mapMount = page.querySelector("[data-ida-directory-vector-map]");
     const controls = Array.from(page.querySelectorAll("[data-ida-directory-select]"));
-    const membersById = new Map(DIRECTORY_MEMBERS.map((member) => [member.id, member]));
-    const memberIdsByRegionCode = DIRECTORY_MEMBERS.reduce((regionMap, member) => {
+    const membersById = new Map(getDirectoryMembers().map((member) => [member.id, member]));
+    const memberIdsByRegionCode = getDirectoryMembers().reduce((regionMap, member) => {
       const regionCode = (member.regionCode || "").toUpperCase();
 
       if (!regionCode) {
@@ -5993,7 +6651,7 @@
       regionMap.set(regionCode, existing);
       return regionMap;
     }, new Map());
-    const mappableMembers = DIRECTORY_MEMBERS
+    const mappableMembers = getDirectoryMembers()
       .filter((member) => Number.isFinite(member.lat) && Number.isFinite(member.lng));
     const markerIndexesById = new Map(
       mappableMembers.map((member, index) => [member.id, index])
@@ -6174,7 +6832,7 @@
     }
 
     function setActiveMember(memberId) {
-      const member = DIRECTORY_MEMBERS.find((item) => item.id === memberId);
+      const member = getDirectoryMembers().find((item) => item.id === memberId);
 
       if (!member) {
         clearActiveMember();
@@ -6485,6 +7143,35 @@
     }
   }
 
+  function refreshDirectoryPage() {
+    const injected = document.querySelector("[data-ida-directory-page]");
+
+    if (!injected) {
+      return;
+    }
+
+    if (destroyDirectoryMap) {
+      destroyDirectoryMap();
+      destroyDirectoryMap = null;
+    }
+
+    cleanupRoutePageEffects(injected);
+    injected.remove();
+    injectDirectoryPage();
+  }
+
+  function syncDirectoryMembersFromApi() {
+    const hadLoaded = directoryMembersLoaded;
+
+    ensureDirectoryMembersLoaded()
+      .then(() => {
+        if (!hadLoaded && directoryMembersLoaded && document.querySelector("[data-ida-directory-page]")) {
+          refreshDirectoryPage();
+        }
+      })
+      .catch(() => {});
+  }
+
   function injectDirectoryPage() {
     const existing = document.querySelector("[data-ida-directory-page]");
 
@@ -6494,6 +7181,7 @@
       syncInjectedFooterLinks();
       initRoutePageEffects(existing);
       initDirectoryMap();
+      syncDirectoryMembersFromApi();
       return;
     }
 
@@ -6514,6 +7202,7 @@
     syncInjectedFooterLinks();
     initRoutePageEffects("[data-ida-directory-page]");
     initDirectoryMap();
+    syncDirectoryMembersFromApi();
   }
 
   function cleanupDirectory() {

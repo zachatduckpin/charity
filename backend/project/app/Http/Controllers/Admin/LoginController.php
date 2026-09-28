@@ -31,9 +31,20 @@ class LoginController extends Controller
         ]);
 
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-            return redirect(route('admin.dashboard'));
+            return redirect()->intended($this->postLoginRedirectPath());
         }
         return back()->with('error', 'Sorry! Credentials Mismatch.');
+    }
+
+    protected function postLoginRedirectPath(): string
+    {
+        $admin = Auth::guard('admin')->user();
+
+        if ($admin && $admin->can('dashboard.view')) {
+            return route('dashboard.index');
+        }
+
+        return route('admin.dashboard');
     }
 
     public function forgotPasswordForm()

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IDA Global Network Application Prototype</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; overflow-x: hidden; background: #fff; color: #172033; font-family: Inter, Arial, sans-serif; }
+        .wrap { width: min(1240px, calc(100% - 32px)); margin: 0 auto; padding: 32px 0 56px; }
+        .kicker { margin: 0 0 8px; color: #0f766e; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+        h1 { margin: 0; color: #12355b; font-size: 34px; line-height: 1.12; overflow-wrap: anywhere; }
+        .intro { max-width: 760px; color: #4c5870; line-height: 1.6; }
+        .welcome-logo { display: block; width: min(280px, 70vw); height: auto; margin: 0 auto 24px; filter: drop-shadow(0 10px 18px rgba(18, 53, 91, .08)); animation: logoFloat 4200ms ease-in-out infinite; }
+        @keyframes welcomeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes logoFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        .layout { display: grid; grid-template-columns: 260px 1fr; gap: 24px; align-items: start; }
+        .layout.welcome-step { grid-template-columns: minmax(0, 1fr); }
+        .layout.welcome-step nav, .layout.welcome-step .progress { display: none; }
+        .layout.welcome-step .actions { justify-content: center; border-top: 0; padding: 0 28px 34px; }
+        .layout.welcome-step .actions > div { display: flex; justify-content: center; }
+        .layout.welcome-step .primary { min-width: 210px; border: 1px solid rgba(255, 255, 255, .72); border-radius: 999px; background: linear-gradient(135deg, rgba(29, 95, 167, .74), rgba(15, 118, 110, .64)); box-shadow: 0 18px 38px rgba(18, 53, 91, .18), inset 0 1px 0 rgba(255, 255, 255, .58); color: #fff; backdrop-filter: blur(14px); }
+        .layout.welcome-step .primary:hover, .layout.welcome-step .primary:focus-visible { transform: translateY(-1px); box-shadow: 0 22px 44px rgba(18, 53, 91, .22), inset 0 1px 0 rgba(255, 255, 255, .7); }
+        nav { position: sticky; top: 24px; border: 1px solid #dbe4f0; border-radius: 8px; background: #fff; padding: 12px; }
+        nav button { width: 100%; display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: center; border: 0; border-radius: 6px; background: transparent; padding: 10px; color: #526079; font: inherit; text-align: left; cursor: pointer; }
+        nav button.active { background: #ffe4bd; color: #7a3f00; font-weight: 800; }
+        nav span:first-child { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; background: #e9eef6; color: #12355b; font-weight: 800; font-size: 13px; }
+        nav button.active span:first-child { background: #e58d22; color: #fff; }
+        main { min-width: 0; border: 1px solid #dbe4f0; border-radius: 8px; background: #f4f7fb; box-shadow: 0 10px 24px rgba(18, 53, 91, .06); }
+        .progress { display: grid; gap: 10px; padding: 22px 28px 12px; background: transparent; }
+        .progress div:first-child { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+        .progress span { color: #1d5fa7; font-size: 14px; font-weight: 800; }
+        .progress strong { color: #12355b; font-size: 14px; }
+        .bar { height: 10px; overflow: hidden; border-radius: 999px; background: #e6edf6; }
+        .bar i { display: block; width: 17%; height: 100%; border-radius: inherit; background: #e58d22; transition: width 180ms ease; }
+        .progress p { margin: 0; color: #66738a; font-size: 13px; line-height: 1.45; }
+        section { display: none; padding: 28px; }
+        section.active { display: block; }
+        .welcome { min-height: 560px; text-align: center; place-content: center; animation: welcomeIn 520ms ease both; }
+        .welcome.active { display: grid; }
+        .welcome p { max-width: 760px; justify-self: center; margin-top: 48px; }
+        h2 { margin: 0; color: #12355b; font-size: 24px; }
+        .welcome h2 { margin-top: 48px; }
+        .note { margin: 8px 0 24px; color: #5d6a80; line-height: 1.55; }
+        .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+        .subsections { display: grid; gap: 18px; }
+        .subsection { border: 1px solid #dbe4f0; border-radius: 8px; background: #fbfcfe; padding: 18px; }
+        .subsection h3 { margin: 0 0 16px; color: #12355b; font-size: 18px; line-height: 1.3; }
+        label, fieldset { display: grid; gap: 7px; border: 0; margin: 0; padding: 0; }
+        .full { grid-column: 1 / -1; }
+        .label, legend { color: #1d5fa7; font-size: 14px; font-weight: 800; }
+        .same-email { display: inline-flex; align-items: center; gap: 8px; color: #526079; font-size: 14px; font-weight: 700; }
+        .same-email input { width: auto; }
+        input, select, textarea { width: 100%; min-width: 0; box-sizing: border-box; border: 1px solid #cbd6e5; border-radius: 6px; background: #fff; padding: 12px 13px; color: #172033; font: inherit; font-size: 16px; }
+        textarea { min-height: 124px; resize: vertical; }
+        .choices { display: flex; flex-wrap: wrap; gap: 10px; }
+        .choice { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; border: 1px solid #cbd6e5; border-radius: 999px; padding: 10px 14px; font-weight: 700; }
+        .choice input { width: auto; accent-color: #0f766e; }
+        .actions { display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid #e1e7f0; padding: 18px 28px; }
+        .btn { min-height: 44px; border: 1px solid #cbd6e5; border-radius: 6px; background: #fff; padding: 11px 16px; color: #12355b; font-weight: 800; cursor: pointer; transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease; }
+        .primary { border-color: #0f766e; background: #0f766e; color: #fff; }
+        .submit { border-color: #12355b; background: #12355b; color: #fff; }
+        @media (max-width: 860px) { .layout, .grid { grid-template-columns: 1fr; } nav { position: static; display: flex; gap: 8px; overflow-x: auto; padding: 10px; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; } nav button { flex: 0 0 144px; grid-template-columns: 1fr; justify-items: center; min-height: 76px; text-align: center; scroll-snap-align: start; } }
+        @media (max-width: 560px) { .wrap { width: min(100% - 16px, 1240px); padding-top: 20px; padding-bottom: 32px; } h1 { font-size: 27px; } .welcome { min-height: 500px; padding: 28px 18px; } .welcome-logo { width: min(220px, 76vw); margin-bottom: 18px; } .welcome h2 { margin-top: 42px; font-size: 21px; } .welcome p { font-size: 15px; } .progress { padding: 16px 18px; } .progress div:first-child { align-items: flex-start; flex-direction: column; gap: 4px; } section { padding: 18px; } h2 { font-size: 21px; } nav button { flex-basis: 124px; min-height: 70px; padding: 9px; font-size: 13px; } .actions { flex-direction: column; padding: 16px 18px; } .actions > div { display: grid; gap: 10px; } .btn { width: 100%; } .layout.welcome-step .actions { align-items: center; padding: 0 18px 28px; } .layout.welcome-step .actions > div { display: flex; width: 100%; justify-content: center; } .layout.welcome-step .primary { width: min(100%, 260px); } .choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } .choice { justify-content: center; border-radius: 6px; } }
+        @media (max-width: 380px) { .wrap { width: min(100% - 12px, 1240px); } section { padding: 16px 14px; } .choices { grid-template-columns: 1fr; } }
+        @media (prefers-reduced-motion: reduce) { .welcome, .welcome-logo, .bar i { animation: none; transition: none; } }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <form class="layout welcome-step">
+            <nav aria-label="Application sections">
+                <button type="button" data-target="1"><span>1</span><span>Contact</span></button>
+                <button type="button" data-target="2"><span>2</span><span>Organization</span></button>
+                <button type="button" data-target="3"><span>3</span><span>Members</span></button>
+                <button type="button" data-target="4"><span>4</span><span>Mission & Practice</span></button>
+                <button type="button" data-target="5"><span>5</span><span>Documents</span></button>
+                <button type="button" data-target="6"><span>6</span><span>Review</span></button>
+            </nav>
+            <main>
+                <div class="progress" aria-live="polite">
+                    <div><span id="progress-step">Step 1 of 6</span><strong id="progress-percent">17% complete</strong></div>
+                    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="17" id="progress-bar"><i></i></div>
+                    <p>Use Save draft at any step to keep your work and return later to finish.</p>
+                </div>
+                <section class="welcome active" aria-label="Welcome">
+                    <img class="welcome-logo" src="assets/ida-global-network-logo.png" alt="The International Dyslexia Association Global Network logo">
+                    <h1>Welcome to IDA Global Network Central</h1>
+                    <p>IDA Global Network Central is the online home of the International Dyslexia Association's Global Network. Through this platform, prospective and current members can apply for membership, connect with colleagues worldwide, share initiatives, access resources, participate in collaborative projects, and contribute to the advancement of dyslexia advocacy and evidence-based practice. We are pleased to welcome you to a growing international community working together to create meaningful impact across diverse regions and cultures.</p>
+                </section>
+                <section>
+                    <h2>Association contact information</h2>
+                    <p class="note">Tell the IDA Home Office who is applying and who should be contacted about this application.</p>
+                    <div class="grid">
+                        <label><span class="label">Organization name</span><input required></label>
+                        <label><span class="label">Acronym</span><input></label>
+                        <label><span class="label">Contact name</span><input required></label>
+                        <label><span class="label">Contact position</span><input></label>
+                        <label><span class="label">Primary contact name</span><input required placeholder="Can be changed later"></label>
+                        <label><span class="label">Secondary contact name</span><input placeholder="Can be changed later"></label>
+                        <label class="full"><span class="label">Address</span><textarea required></textarea></label>
+                        <label><span class="label">Country</span><select required><option>Select country</option><option>Egypt</option><option>Kuwait</option><option>Saudi Arabia</option><option>United Arab Emirates</option><option>United Kingdom</option><option>United States</option><option>Other</option></select></label>
+                        <label><span class="label">If Other, please specify</span><input></label>
+                        <label><span class="label">Telephone</span><input placeholder="+1 410 296 0232" required></label>
+                        <label><span class="label">Additional phone numbers</span><input placeholder="Mobile, WhatsApp, or alternate office number"></label>
+                        <label><span class="label">General email</span><input type="email" required></label>
+                        <label><span class="label">Primary contact email</span><input type="email" required placeholder="Can be changed later"></label>
+                        <label><span class="label">Secondary contact email</span><input type="email" placeholder="Can be changed later"><span class="same-email"><input type="checkbox"> Same as primary contact email</span></label>
+                        <label><span class="label">Website URL</span><input type="url" placeholder="https://"></label>
+                    </div>
+                </section>
+                <section>
+                    <h2>Organization profile</h2>
+                    <p class="note">Describe legal, governance, and financial structure.</p>
+                    <div class="grid">
+                        <label><span class="label">Year established</span><input type="number" min="1800"></label>
+                        <label><span class="label">Structure type</span><select><option>NGO</option><option>Non-profit</option><option>Charity</option><option>Other</option></select></label>
+                        <label class="full"><span class="label">Governance structure</span><textarea></textarea></label>
+                        <fieldset><legend>Formal bylaws?</legend><div class="choices"><label class="choice"><input type="radio">Yes</label><label class="choice"><input type="radio">No</label></div></fieldset>
+                        <fieldset><legend>IDA member?</legend><div class="choices"><label class="choice"><input type="radio">Yes</label><label class="choice"><input type="radio">No</label></div></fieldset>
+                    </div>
+                </section>
+                <section><h2>Members and branches</h2><p class="note">Membership counts, categories, dues, recruitment material, and branches.</p><textarea placeholder="Membership categories, branch details, and notes"></textarea></section>
+                <section><h2>Mission, activities, and practice context</h2><p class="note">Mission, public activities, annual conference, country definition, instructional approaches, remediation programs, and advocacy position.</p><div class="subsections"><div class="subsection"><h3>Mission and activities</h3><textarea placeholder="Organization mission"></textarea><textarea placeholder="Typical public activities"></textarea></div><div class="subsection"><h3>Practice context</h3><textarea placeholder="Country definition of dyslexia"></textarea><textarea placeholder="Instructional approaches, remediation programs, and advocacy position"></textarea></div></div></section>
+                <section><h2>Supporting documents</h2><p class="note">Upload one or more files in any document category, plus photos of the applicant contacts and the organization.</p><h3>Required and supporting files</h3><input type="file" multiple><h3>Photos and images</h3><label><span class="label">Applicant / person completing this form photo</span><input type="file" accept="image/*"></label><label><span class="label">Primary contact photo</span><input type="file" accept="image/*"></label><label><span class="label">Secondary contact photo</span><input type="file" accept="image/*"></label><label><span class="label">Organization photo</span><input type="file" accept="image/*"></label><label><span class="label">Organization logo, high resolution</span><input type="file" accept=".jpg,.jpeg,.png,.webp,.svg,image/jpeg,image/png,image/webp,image/svg+xml"></label><label><span class="label">Additional activity photos</span><input type="file" accept="image/*" multiple></label><label><span class="label">Add additional files</span><input type="file" multiple></label></section>
+                <section><h2>Review and signature</h2><p class="note">Acceptance into the Global Network Program and final participation level are subject to IDA approval.</p><input placeholder="Type full name"></section>
+                <div class="actions">
+                    <button class="btn" type="button" id="back" disabled>Back</button>
+                    <div>
+                        <button class="btn" type="button" id="draft">Save draft and finish later</button>
+                        <button class="btn primary" type="button" id="next">Start application</button>
+                        <button class="btn submit" type="button" id="submit" hidden>Submit application</button>
+                    </div>
+                </div>
+            </main>
+        </form>
+    </div>
+    <script>
+        const buttons = [...document.querySelectorAll('nav button')];
+        const sections = [...document.querySelectorAll('section')];
+        const form = document.querySelector('form');
+        const back = document.querySelector('#back');
+        const next = document.querySelector('#next');
+        const submit = document.querySelector('#submit');
+        const draft = document.querySelector('#draft');
+        const progressStep = document.querySelector('#progress-step');
+        const progressPercent = document.querySelector('#progress-percent');
+        const progressBar = document.querySelector('#progress-bar');
+        const progressFill = document.querySelector('.bar i');
+        let current = 0;
+        function show(index) {
+            current = Math.max(0, Math.min(index, sections.length - 1));
+            const formStep = Math.max(current, 1);
+            const formStepCount = Math.max(sections.length - 1, 1);
+            const percent = Math.round((formStep / formStepCount) * 100);
+            form.classList.toggle('welcome-step', current === 0);
+            buttons.forEach((button) => button.classList.toggle('active', Number(button.dataset.target) === current));
+            sections.forEach((section, i) => section.classList.toggle('active', i === current));
+            back.disabled = current === 0;
+            back.hidden = current === 0;
+            draft.hidden = current === 0;
+            next.textContent = current === 0 ? 'Start application' : 'Next';
+            next.hidden = current === sections.length - 1;
+            submit.hidden = current !== sections.length - 1;
+            progressStep.textContent = `Step ${formStep} of ${formStepCount}`;
+            progressPercent.textContent = `${percent}% complete`;
+            progressBar.setAttribute('aria-valuenow', String(percent));
+            progressFill.style.width = `${percent}%`;
+        }
+        buttons.forEach((button) => button.addEventListener('click', () => show(Number(button.dataset.target))));
+        back.addEventListener('click', () => show(current - 1));
+        next.addEventListener('click', () => show(current + 1));
+        show(0);
+    </script>
+</body>
+</html>

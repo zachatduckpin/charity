@@ -6,6 +6,7 @@ use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Models\Role;
 use App\Http\Controllers\Controller;
+use Spatie\Permission\Models\Role as DashboardRole;
 
 class ManageStaffController extends Controller
 {
@@ -38,6 +39,7 @@ class ManageStaffController extends Controller
         $staff->password = bcrypt($request->password);
         $staff->role     = $request->role;
         $staff->save();
+        $this->syncDashboardRole($staff);
       
         return back()->with('success','Staff added successfully');
     }
@@ -59,6 +61,7 @@ class ManageStaffController extends Controller
         $staff->role     = $request->role;
         $staff->status     = $request->status;
         $staff->update();
+        $this->syncDashboardRole($staff);
 
         return back()->with('success','Staff updated successfully');
     }
@@ -68,5 +71,21 @@ class ManageStaffController extends Controller
         $staff = Admin::findOrFail($request->id);
         $staff->delete();
         return back()->with('success','Staff deleted successfully');
+    }
+
+    private function syncDashboardRole(Admin $staff): void
+    {
+        $roleName = strcasecmp((string) $staff->role, 'staff') === 0
+            ? 'Operations Manager'
+            : 'Dashboard Administrator';
+
+        $dashboardRole = DashboardRole::query()
+            ->where('name', $roleName)
+            ->where('guard_name', 'admin')
+            ->first();
+
+        if ($dashboardRole) {
+            $staff->syncRoles([$dashboardRole]);
+        }
     }
 }
